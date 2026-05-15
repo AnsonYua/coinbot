@@ -1,6 +1,7 @@
 import { runCheck } from "../lib/check-bot.js";
 import { unauthorized, jsonResponse } from "../lib/http.js";
 import { isAuthorized } from "../lib/config.js";
+import { insertErrorLog } from "../lib/mongo.js";
 
 export default async function handler(req, res) {
   const url = new URL(req.url, "http://localhost");
@@ -16,6 +17,14 @@ export default async function handler(req, res) {
     });
     return jsonResponse(res, 200, result);
   } catch (error) {
+    try {
+      await insertErrorLog({
+        created_at: new Date(),
+        source: "api_check",
+        message: error instanceof Error ? error.message : String(error),
+        path: req.url,
+      });
+    } catch {}
     return jsonResponse(res, 500, {
       ok: false,
       error: "check_failed",
