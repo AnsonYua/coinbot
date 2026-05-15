@@ -13,7 +13,6 @@ export default async function handler(req, res) {
   try {
     const result = await runCheck({
       dryRunOverride: query.get("dryRun"),
-      forceMarketSlug: query.get("forceMarketSlug") || "",
     });
     return jsonResponse(res, 200, result);
   } catch (error) {

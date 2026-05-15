@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { interpretOrderResult } from "../lib/check-bot.js";
+import { interpretOrderResult } from "../lib/check-bot-side.js";
 
 test("interpretOrderResult rejects unsuccessful order without id", () => {
   const result = interpretOrderResult({
