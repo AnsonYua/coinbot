@@ -1,0 +1,18 @@
+{
+  "name": "btc-15m-wp-style-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check api/check.js && node --check lib/config.js && node --check lib/check-bot.js && node --check lib/mongo.js && node --check lib/polymarket.js && node --check lib/binance.js && node --check lib/telegram.js",
+    "test": "node --test test-node/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@polymarket/clob-client-v2": "^1.0.6",
+    "mongodb": "^6.17.0",
+    "viem": "^2.31.4"
+  }
+}
