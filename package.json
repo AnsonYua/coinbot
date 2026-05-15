@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@polymarket/clob-client-v2": "^1.0.6",
+    "ethers": "^6.16.0",
     "mongodb": "^6.17.0",
     "viem": "^2.31.4"
   }

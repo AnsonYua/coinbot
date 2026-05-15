@@ -17,6 +17,9 @@ Minimal buy-only BTC 15-minute Polymarket bot for Vercel.
 
 1. Import this repo into Vercel.
 2. Set the environment variables from `.env.example`.
+   Use your existing Polymarket-style names:
+   `POLYMARKET_PRIVATE_KEY`, `POLYMARKET_FUNDER_ADDRESS`,
+   `POLYMARKET_USER_ADDRESS`, `POLYMARKET_SIGNATURE_TYPE`.
 3. Configure cron to call:
 
 ```bash
