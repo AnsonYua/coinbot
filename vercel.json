@@ -2,7 +2,8 @@
   "regions": ["hkg1"],
   "functions": {
     "api/check.js": {
-      "maxDuration": 10
+      "maxDuration": 30,
+      "includeFiles": "data/*.json"
     }
   }
 }
