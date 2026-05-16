@@ -10,6 +10,7 @@ test("interpretOrderResult rejects unsuccessful order without id", () => {
   });
 
   assert.equal(result.accepted, false);
+  assert.equal(result.rejected, false);
   assert.equal(result.filled, false);
   assert.equal(result.orderId, null);
   assert.equal(result.orderStatus, "rejected");
@@ -22,6 +23,7 @@ test("interpretOrderResult accepts placed order with id but not filled", () => {
   });
 
   assert.equal(result.accepted, true);
+  assert.equal(result.rejected, false);
   assert.equal(result.filled, false);
   assert.equal(result.orderId, "abc123");
   assert.equal(result.orderStatus, "live");
@@ -38,4 +40,18 @@ test("interpretOrderResult marks matched order as filled", () => {
   assert.equal(result.filled, true);
   assert.equal(result.orderId, "abc123");
   assert.equal(result.orderStatus, "matched");
+});
+
+test("interpretOrderResult rejects 400 FAK/FOK response even when order id exists", () => {
+  const result = interpretOrderResult({
+    orderID: "abc123",
+    status: 400,
+    error: "order couldn't be fully filled",
+  });
+
+  assert.equal(result.accepted, false);
+  assert.equal(result.rejected, true);
+  assert.equal(result.filled, false);
+  assert.equal(result.orderId, "abc123");
+  assert.equal(result.orderStatus, "400");
 });
