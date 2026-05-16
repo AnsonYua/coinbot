@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "node --check api/check.js && node --check lib/config.js && node --check lib/check-bot.js && node --check lib/check-bot-side.js && node --check lib/mongo.js && node --check lib/polymarket.js && node --check lib/binance.js && node --check lib/probability-map.js && node --check lib/time.js && node --check lib/telegram.js",
+    "check": "node --check api/check.js && node --check api/redeem.js && node --check lib/config.js && node --check lib/check-bot.js && node --check lib/check-bot-side.js && node --check lib/mongo.js && node --check lib/polymarket.js && node --check lib/binance.js && node --check lib/probability-map.js && node --check lib/redeem.js && node --check lib/time.js && node --check lib/telegram.js",
     "test": "node --test test-node/*.test.js"
   },
   "engines": {
