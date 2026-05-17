@@ -1,0 +1,4625 @@
+{
+  "generated_at_utc": "2026-05-17T07:58:32Z",
+  "source": {
+    "btc_cache_file": "/Users/hello/Desktop/bitcoinbot/repo/outputs/polymarket_btc_study/cache/binance_btcusdt_1m_20250517T0752_20260517T0752.json",
+    "market_results_source": "BTC cache only; outcome inferred from 15m end price vs start price",
+    "window_start_utc": "2025-05-17T07:52:00Z",
+    "window_end_utc": "2026-05-17T07:53:00Z",
+    "resolved_rows": 35040,
+    "missing_candles": 0
+  },
+  "binning": {
+    "delta_points": [
+      "0_19",
+      "20_49",
+      "50_99",
+      "100_plus"
+    ],
+    "ret10_abs": [
+      "0_9bp",
+      "10_39bp",
+      "40bp_plus"
+    ],
+    "minutes_field": {
+      "YES": "above_mins",
+      "NO": "below_mins"
+    },
+    "minutes_mode": "at_least"
+  },
+  "map": {
+    "threshold": {
+      "YES": {
+        "0": {
+          "0_19": {
+            "all_ret10": {
+              "n": 2492,
+              "wins": 1576,
+              "losses": 916,
+              "win_rate": 0.632424,
+              "wilson_lower_95": 0.613303,
+              "avg_abs_delta_points": 9.9618,
+              "avg_abs_ret10m_to_trigger": 0.00041
+            },
+            "0_9bp": {
+              "n": 550,
+              "wins": 359,
+              "losses": 191,
+              "win_rate": 0.652727,
+              "wilson_lower_95": 0.612002,
+              "avg_abs_delta_points": 10.1772,
+              "avg_abs_ret10m_to_trigger": 4.1e-05
+            },
+            "10_39bp": {
+              "n": 1040,
+              "wins": 655,
+              "losses": 385,
+              "win_rate": 0.629808,
+              "wilson_lower_95": 0.600034,
+              "avg_abs_delta_points": 9.9974,
+              "avg_abs_ret10m_to_trigger": 0.000234
+            },
+            "40bp_plus": {
+              "n": 902,
+              "wins": 562,
+              "losses": 340,
+              "win_rate": 0.62306,
+              "wilson_lower_95": 0.590974,
+              "avg_abs_delta_points": 9.7892,
+              "avg_abs_ret10m_to_trigger": 0.000838
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 3324,
+              "wins": 2641,
+              "losses": 683,
+              "win_rate": 0.794525,
+              "wilson_lower_95": 0.780452,
+              "avg_abs_delta_points": 34.5316,
+              "avg_abs_ret10m_to_trigger": 0.000464
+            },
+            "0_9bp": {
+              "n": 621,
+              "wins": 524,
+              "losses": 97,
+              "win_rate": 0.8438,
+              "wilson_lower_95": 0.813142,
+              "avg_abs_delta_points": 33.5629,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1320,
+              "wins": 1094,
+              "losses": 226,
+              "win_rate": 0.828788,
+              "wilson_lower_95": 0.807519,
+              "avg_abs_delta_points": 34.7938,
+              "avg_abs_ret10m_to_trigger": 0.000235
+            },
+            "40bp_plus": {
+              "n": 1383,
+              "wins": 1023,
+              "losses": 360,
+              "win_rate": 0.739696,
+              "wilson_lower_95": 0.715928,
+              "avg_abs_delta_points": 34.7163,
+              "avg_abs_ret10m_to_trigger": 0.000871
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 4122,
+              "wins": 3746,
+              "losses": 376,
+              "win_rate": 0.908782,
+              "wilson_lower_95": 0.899608,
+              "avg_abs_delta_points": 72.9655,
+              "avg_abs_ret10m_to_trigger": 0.000527
+            },
+            "0_9bp": {
+              "n": 611,
+              "wins": 565,
+              "losses": 46,
+              "win_rate": 0.924714,
+              "wilson_lower_95": 0.901036,
+              "avg_abs_delta_points": 71.637,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1458,
+              "wins": 1348,
+              "losses": 110,
+              "win_rate": 0.924554,
+              "wilson_lower_95": 0.909854,
+              "avg_abs_delta_points": 72.1656,
+              "avg_abs_ret10m_to_trigger": 0.000242
+            },
+            "40bp_plus": {
+              "n": 2053,
+              "wins": 1833,
+              "losses": 220,
+              "win_rate": 0.89284,
+              "wilson_lower_95": 0.878718,
+              "avg_abs_delta_points": 73.9289,
+              "avg_abs_ret10m_to_trigger": 0.000872
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7411,
+              "wins": 7254,
+              "losses": 157,
+              "win_rate": 0.978815,
+              "wilson_lower_95": 0.97528,
+              "avg_abs_delta_points": 231.5743,
+              "avg_abs_ret10m_to_trigger": 0.000958
+            },
+            "0_9bp": {
+              "n": 629,
+              "wins": 619,
+              "losses": 10,
+              "win_rate": 0.984102,
+              "wilson_lower_95": 0.970984,
+              "avg_abs_delta_points": 184.436,
+              "avg_abs_ret10m_to_trigger": 4.9e-05
+            },
+            "10_39bp": {
+              "n": 1820,
+              "wins": 1786,
+              "losses": 34,
+              "win_rate": 0.981319,
+              "wilson_lower_95": 0.974009,
+              "avg_abs_delta_points": 189.8923,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 4962,
+              "wins": 4849,
+              "losses": 113,
+              "win_rate": 0.977227,
+              "wilson_lower_95": 0.972692,
+              "avg_abs_delta_points": 252.8381,
+              "avg_abs_ret10m_to_trigger": 0.001334
+            }
+          }
+        },
+        "1": {
+          "0_19": {
+            "all_ret10": {
+              "n": 2492,
+              "wins": 1576,
+              "losses": 916,
+              "win_rate": 0.632424,
+              "wilson_lower_95": 0.613303,
+              "avg_abs_delta_points": 9.9618,
+              "avg_abs_ret10m_to_trigger": 0.00041
+            },
+            "0_9bp": {
+              "n": 550,
+              "wins": 359,
+              "losses": 191,
+              "win_rate": 0.652727,
+              "wilson_lower_95": 0.612002,
+              "avg_abs_delta_points": 10.1772,
+              "avg_abs_ret10m_to_trigger": 4.1e-05
+            },
+            "10_39bp": {
+              "n": 1040,
+              "wins": 655,
+              "losses": 385,
+              "win_rate": 0.629808,
+              "wilson_lower_95": 0.600034,
+              "avg_abs_delta_points": 9.9974,
+              "avg_abs_ret10m_to_trigger": 0.000234
+            },
+            "40bp_plus": {
+              "n": 902,
+              "wins": 562,
+              "losses": 340,
+              "win_rate": 0.62306,
+              "wilson_lower_95": 0.590974,
+              "avg_abs_delta_points": 9.7892,
+              "avg_abs_ret10m_to_trigger": 0.000838
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 3324,
+              "wins": 2641,
+              "losses": 683,
+              "win_rate": 0.794525,
+              "wilson_lower_95": 0.780452,
+              "avg_abs_delta_points": 34.5316,
+              "avg_abs_ret10m_to_trigger": 0.000464
+            },
+            "0_9bp": {
+              "n": 621,
+              "wins": 524,
+              "losses": 97,
+              "win_rate": 0.8438,
+              "wilson_lower_95": 0.813142,
+              "avg_abs_delta_points": 33.5629,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1320,
+              "wins": 1094,
+              "losses": 226,
+              "win_rate": 0.828788,
+              "wilson_lower_95": 0.807519,
+              "avg_abs_delta_points": 34.7938,
+              "avg_abs_ret10m_to_trigger": 0.000235
+            },
+            "40bp_plus": {
+              "n": 1383,
+              "wins": 1023,
+              "losses": 360,
+              "win_rate": 0.739696,
+              "wilson_lower_95": 0.715928,
+              "avg_abs_delta_points": 34.7163,
+              "avg_abs_ret10m_to_trigger": 0.000871
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 4122,
+              "wins": 3746,
+              "losses": 376,
+              "win_rate": 0.908782,
+              "wilson_lower_95": 0.899608,
+              "avg_abs_delta_points": 72.9655,
+              "avg_abs_ret10m_to_trigger": 0.000527
+            },
+            "0_9bp": {
+              "n": 611,
+              "wins": 565,
+              "losses": 46,
+              "win_rate": 0.924714,
+              "wilson_lower_95": 0.901036,
+              "avg_abs_delta_points": 71.637,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1458,
+              "wins": 1348,
+              "losses": 110,
+              "win_rate": 0.924554,
+              "wilson_lower_95": 0.909854,
+              "avg_abs_delta_points": 72.1656,
+              "avg_abs_ret10m_to_trigger": 0.000242
+            },
+            "40bp_plus": {
+              "n": 2053,
+              "wins": 1833,
+              "losses": 220,
+              "win_rate": 0.89284,
+              "wilson_lower_95": 0.878718,
+              "avg_abs_delta_points": 73.9289,
+              "avg_abs_ret10m_to_trigger": 0.000872
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7411,
+              "wins": 7254,
+              "losses": 157,
+              "win_rate": 0.978815,
+              "wilson_lower_95": 0.97528,
+              "avg_abs_delta_points": 231.5743,
+              "avg_abs_ret10m_to_trigger": 0.000958
+            },
+            "0_9bp": {
+              "n": 629,
+              "wins": 619,
+              "losses": 10,
+              "win_rate": 0.984102,
+              "wilson_lower_95": 0.970984,
+              "avg_abs_delta_points": 184.436,
+              "avg_abs_ret10m_to_trigger": 4.9e-05
+            },
+            "10_39bp": {
+              "n": 1820,
+              "wins": 1786,
+              "losses": 34,
+              "win_rate": 0.981319,
+              "wilson_lower_95": 0.974009,
+              "avg_abs_delta_points": 189.8923,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 4962,
+              "wins": 4849,
+              "losses": 113,
+              "win_rate": 0.977227,
+              "wilson_lower_95": 0.972692,
+              "avg_abs_delta_points": 252.8381,
+              "avg_abs_ret10m_to_trigger": 0.001334
+            }
+          }
+        },
+        "2": {
+          "0_19": {
+            "all_ret10": {
+              "n": 2352,
+              "wins": 1489,
+              "losses": 863,
+              "win_rate": 0.633078,
+              "wilson_lower_95": 0.613398,
+              "avg_abs_delta_points": 10.0279,
+              "avg_abs_ret10m_to_trigger": 0.000388
+            },
+            "0_9bp": {
+              "n": 548,
+              "wins": 359,
+              "losses": 189,
+              "win_rate": 0.655109,
+              "wilson_lower_95": 0.614356,
+              "avg_abs_delta_points": 10.1943,
+              "avg_abs_ret10m_to_trigger": 4.1e-05
+            },
+            "10_39bp": {
+              "n": 998,
+              "wins": 626,
+              "losses": 372,
+              "win_rate": 0.627255,
+              "wilson_lower_95": 0.59682,
+              "avg_abs_delta_points": 10.1029,
+              "avg_abs_ret10m_to_trigger": 0.000233
+            },
+            "40bp_plus": {
+              "n": 806,
+              "wins": 504,
+              "losses": 302,
+              "win_rate": 0.62531,
+              "wilson_lower_95": 0.591372,
+              "avg_abs_delta_points": 9.8218,
+              "avg_abs_ret10m_to_trigger": 0.000817
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 3228,
+              "wins": 2573,
+              "losses": 655,
+              "win_rate": 0.797088,
+              "wilson_lower_95": 0.782865,
+              "avg_abs_delta_points": 34.6119,
+              "avg_abs_ret10m_to_trigger": 0.00044
+            },
+            "0_9bp": {
+              "n": 621,
+              "wins": 524,
+              "losses": 97,
+              "win_rate": 0.8438,
+              "wilson_lower_95": 0.813142,
+              "avg_abs_delta_points": 33.5629,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1312,
+              "wins": 1087,
+              "losses": 225,
+              "win_rate": 0.828506,
+              "wilson_lower_95": 0.807157,
+              "avg_abs_delta_points": 34.8656,
+              "avg_abs_ret10m_to_trigger": 0.000235
+            },
+            "40bp_plus": {
+              "n": 1295,
+              "wins": 962,
+              "losses": 333,
+              "win_rate": 0.742857,
+              "wilson_lower_95": 0.718359,
+              "avg_abs_delta_points": 34.8579,
+              "avg_abs_ret10m_to_trigger": 0.000838
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 4086,
+              "wins": 3718,
+              "losses": 368,
+              "win_rate": 0.909936,
+              "wilson_lower_95": 0.900769,
+              "avg_abs_delta_points": 72.9949,
+              "avg_abs_ret10m_to_trigger": 0.000517
+            },
+            "0_9bp": {
+              "n": 611,
+              "wins": 565,
+              "losses": 46,
+              "win_rate": 0.924714,
+              "wilson_lower_95": 0.901036,
+              "avg_abs_delta_points": 71.637,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1458,
+              "wins": 1348,
+              "losses": 110,
+              "win_rate": 0.924554,
+              "wilson_lower_95": 0.909854,
+              "avg_abs_delta_points": 72.1656,
+              "avg_abs_ret10m_to_trigger": 0.000242
+            },
+            "40bp_plus": {
+              "n": 2017,
+              "wins": 1805,
+              "losses": 212,
+              "win_rate": 0.894893,
+              "wilson_lower_95": 0.88075,
+              "avg_abs_delta_points": 74.0058,
+              "avg_abs_ret10m_to_trigger": 0.000859
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7406,
+              "wins": 7249,
+              "losses": 157,
+              "win_rate": 0.978801,
+              "wilson_lower_95": 0.975263,
+              "avg_abs_delta_points": 231.6348,
+              "avg_abs_ret10m_to_trigger": 0.000957
+            },
+            "0_9bp": {
+              "n": 629,
+              "wins": 619,
+              "losses": 10,
+              "win_rate": 0.984102,
+              "wilson_lower_95": 0.970984,
+              "avg_abs_delta_points": 184.436,
+              "avg_abs_ret10m_to_trigger": 4.9e-05
+            },
+            "10_39bp": {
+              "n": 1820,
+              "wins": 1786,
+              "losses": 34,
+              "win_rate": 0.981319,
+              "wilson_lower_95": 0.974009,
+              "avg_abs_delta_points": 189.8923,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 4957,
+              "wins": 4844,
+              "losses": 113,
+              "win_rate": 0.977204,
+              "wilson_lower_95": 0.972665,
+              "avg_abs_delta_points": 252.9501,
+              "avg_abs_ret10m_to_trigger": 0.001332
+            }
+          }
+        },
+        "3": {
+          "0_19": {
+            "all_ret10": {
+              "n": 2190,
+              "wins": 1389,
+              "losses": 801,
+              "win_rate": 0.634247,
+              "wilson_lower_95": 0.613855,
+              "avg_abs_delta_points": 10.0616,
+              "avg_abs_ret10m_to_trigger": 0.000374
+            },
+            "0_9bp": {
+              "n": 536,
+              "wins": 353,
+              "losses": 183,
+              "win_rate": 0.658582,
+              "wilson_lower_95": 0.617437,
+              "avg_abs_delta_points": 10.2932,
+              "avg_abs_ret10m_to_trigger": 4e-05
+            },
+            "10_39bp": {
+              "n": 942,
+              "wins": 592,
+              "losses": 350,
+              "win_rate": 0.62845,
+              "wilson_lower_95": 0.597128,
+              "avg_abs_delta_points": 10.191,
+              "avg_abs_ret10m_to_trigger": 0.000232
+            },
+            "40bp_plus": {
+              "n": 712,
+              "wins": 444,
+              "losses": 268,
+              "win_rate": 0.623596,
+              "wilson_lower_95": 0.587434,
+              "avg_abs_delta_points": 9.716,
+              "avg_abs_ret10m_to_trigger": 0.000813
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 3099,
+              "wins": 2474,
+              "losses": 625,
+              "win_rate": 0.798322,
+              "wilson_lower_95": 0.783829,
+              "avg_abs_delta_points": 34.6786,
+              "avg_abs_ret10m_to_trigger": 0.000418
+            },
+            "0_9bp": {
+              "n": 620,
+              "wins": 523,
+              "losses": 97,
+              "win_rate": 0.843548,
+              "wilson_lower_95": 0.812847,
+              "avg_abs_delta_points": 33.553,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1299,
+              "wins": 1078,
+              "losses": 221,
+              "win_rate": 0.829869,
+              "wilson_lower_95": 0.80847,
+              "avg_abs_delta_points": 34.9404,
+              "avg_abs_ret10m_to_trigger": 0.000234
+            },
+            "40bp_plus": {
+              "n": 1180,
+              "wins": 873,
+              "losses": 307,
+              "win_rate": 0.739831,
+              "wilson_lower_95": 0.714048,
+              "avg_abs_delta_points": 34.9818,
+              "avg_abs_ret10m_to_trigger": 0.000817
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 4019,
+              "wins": 3659,
+              "losses": 360,
+              "win_rate": 0.910425,
+              "wilson_lower_95": 0.9012,
+              "avg_abs_delta_points": 73.0533,
+              "avg_abs_ret10m_to_trigger": 0.000503
+            },
+            "0_9bp": {
+              "n": 611,
+              "wins": 565,
+              "losses": 46,
+              "win_rate": 0.924714,
+              "wilson_lower_95": 0.901036,
+              "avg_abs_delta_points": 71.637,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1458,
+              "wins": 1348,
+              "losses": 110,
+              "win_rate": 0.924554,
+              "wilson_lower_95": 0.909854,
+              "avg_abs_delta_points": 72.1656,
+              "avg_abs_ret10m_to_trigger": 0.000242
+            },
+            "40bp_plus": {
+              "n": 1950,
+              "wins": 1746,
+              "losses": 204,
+              "win_rate": 0.895385,
+              "wilson_lower_95": 0.881014,
+              "avg_abs_delta_points": 74.1608,
+              "avg_abs_ret10m_to_trigger": 0.00084
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7372,
+              "wins": 7215,
+              "losses": 157,
+              "win_rate": 0.978703,
+              "wilson_lower_95": 0.97515,
+              "avg_abs_delta_points": 231.9903,
+              "avg_abs_ret10m_to_trigger": 0.000948
+            },
+            "0_9bp": {
+              "n": 629,
+              "wins": 619,
+              "losses": 10,
+              "win_rate": 0.984102,
+              "wilson_lower_95": 0.970984,
+              "avg_abs_delta_points": 184.436,
+              "avg_abs_ret10m_to_trigger": 4.9e-05
+            },
+            "10_39bp": {
+              "n": 1820,
+              "wins": 1786,
+              "losses": 34,
+              "win_rate": 0.981319,
+              "wilson_lower_95": 0.974009,
+              "avg_abs_delta_points": 189.8923,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 4923,
+              "wins": 4810,
+              "losses": 113,
+              "win_rate": 0.977047,
+              "wilson_lower_95": 0.972476,
+              "avg_abs_delta_points": 253.6295,
+              "avg_abs_ret10m_to_trigger": 0.001322
+            }
+          }
+        },
+        "4": {
+          "0_19": {
+            "all_ret10": {
+              "n": 2019,
+              "wins": 1284,
+              "losses": 735,
+              "win_rate": 0.635958,
+              "wilson_lower_95": 0.61473,
+              "avg_abs_delta_points": 10.1384,
+              "avg_abs_ret10m_to_trigger": 0.000364
+            },
+            "0_9bp": {
+              "n": 518,
+              "wins": 344,
+              "losses": 174,
+              "win_rate": 0.664093,
+              "wilson_lower_95": 0.622343,
+              "avg_abs_delta_points": 10.3868,
+              "avg_abs_ret10m_to_trigger": 4e-05
+            },
+            "10_39bp": {
+              "n": 862,
+              "wins": 539,
+              "losses": 323,
+              "win_rate": 0.62529,
+              "wilson_lower_95": 0.592487,
+              "avg_abs_delta_points": 10.3318,
+              "avg_abs_ret10m_to_trigger": 0.000231
+            },
+            "40bp_plus": {
+              "n": 639,
+              "wins": 401,
+              "losses": 238,
+              "win_rate": 0.627543,
+              "wilson_lower_95": 0.5894,
+              "avg_abs_delta_points": 9.6763,
+              "avg_abs_ret10m_to_trigger": 0.000805
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 2932,
+              "wins": 2340,
+              "losses": 592,
+              "win_rate": 0.79809,
+              "wilson_lower_95": 0.783174,
+              "avg_abs_delta_points": 34.7483,
+              "avg_abs_ret10m_to_trigger": 0.000402
+            },
+            "0_9bp": {
+              "n": 614,
+              "wins": 518,
+              "losses": 96,
+              "win_rate": 0.843648,
+              "wilson_lower_95": 0.812793,
+              "avg_abs_delta_points": 33.6224,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1265,
+              "wins": 1048,
+              "losses": 217,
+              "win_rate": 0.828458,
+              "wilson_lower_95": 0.806697,
+              "avg_abs_delta_points": 35.0916,
+              "avg_abs_ret10m_to_trigger": 0.000233
+            },
+            "40bp_plus": {
+              "n": 1053,
+              "wins": 774,
+              "losses": 279,
+              "win_rate": 0.735043,
+              "wilson_lower_95": 0.707568,
+              "avg_abs_delta_points": 34.9922,
+              "avg_abs_ret10m_to_trigger": 0.000812
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 3906,
+              "wins": 3557,
+              "losses": 349,
+              "win_rate": 0.91065,
+              "wilson_lower_95": 0.901296,
+              "avg_abs_delta_points": 73.1874,
+              "avg_abs_ret10m_to_trigger": 0.000485
+            },
+            "0_9bp": {
+              "n": 610,
+              "wins": 564,
+              "losses": 46,
+              "win_rate": 0.92459,
+              "wilson_lower_95": 0.900876,
+              "avg_abs_delta_points": 71.6616,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1457,
+              "wins": 1347,
+              "losses": 110,
+              "win_rate": 0.924502,
+              "wilson_lower_95": 0.909792,
+              "avg_abs_delta_points": 72.1788,
+              "avg_abs_ret10m_to_trigger": 0.000242
+            },
+            "40bp_plus": {
+              "n": 1839,
+              "wins": 1646,
+              "losses": 193,
+              "win_rate": 0.895052,
+              "wilson_lower_95": 0.88021,
+              "avg_abs_delta_points": 74.4925,
+              "avg_abs_ret10m_to_trigger": 0.000823
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7297,
+              "wins": 7146,
+              "losses": 151,
+              "win_rate": 0.979307,
+              "wilson_lower_95": 0.975779,
+              "avg_abs_delta_points": 232.514,
+              "avg_abs_ret10m_to_trigger": 0.000931
+            },
+            "0_9bp": {
+              "n": 629,
+              "wins": 619,
+              "losses": 10,
+              "win_rate": 0.984102,
+              "wilson_lower_95": 0.970984,
+              "avg_abs_delta_points": 184.436,
+              "avg_abs_ret10m_to_trigger": 4.9e-05
+            },
+            "10_39bp": {
+              "n": 1818,
+              "wins": 1784,
+              "losses": 34,
+              "win_rate": 0.981298,
+              "wilson_lower_95": 0.97398,
+              "avg_abs_delta_points": 189.9764,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 4850,
+              "wins": 4743,
+              "losses": 107,
+              "win_rate": 0.977938,
+              "wilson_lower_95": 0.97341,
+              "avg_abs_delta_points": 254.6943,
+              "avg_abs_ret10m_to_trigger": 0.001301
+            }
+          }
+        },
+        "5": {
+          "0_19": {
+            "all_ret10": {
+              "n": 1856,
+              "wins": 1176,
+              "losses": 680,
+              "win_rate": 0.633621,
+              "wilson_lower_95": 0.611445,
+              "avg_abs_delta_points": 10.2021,
+              "avg_abs_ret10m_to_trigger": 0.000362
+            },
+            "0_9bp": {
+              "n": 479,
+              "wins": 314,
+              "losses": 165,
+              "win_rate": 0.655532,
+              "wilson_lower_95": 0.611891,
+              "avg_abs_delta_points": 10.4302,
+              "avg_abs_ret10m_to_trigger": 4e-05
+            },
+            "10_39bp": {
+              "n": 794,
+              "wins": 494,
+              "losses": 300,
+              "win_rate": 0.622166,
+              "wilson_lower_95": 0.587929,
+              "avg_abs_delta_points": 10.4833,
+              "avg_abs_ret10m_to_trigger": 0.000231
+            },
+            "40bp_plus": {
+              "n": 583,
+              "wins": 368,
+              "losses": 215,
+              "win_rate": 0.631218,
+              "wilson_lower_95": 0.591313,
+              "avg_abs_delta_points": 9.6317,
+              "avg_abs_ret10m_to_trigger": 0.000804
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 2716,
+              "wins": 2157,
+              "losses": 559,
+              "win_rate": 0.794183,
+              "wilson_lower_95": 0.778567,
+              "avg_abs_delta_points": 34.7638,
+              "avg_abs_ret10m_to_trigger": 0.00039
+            },
+            "0_9bp": {
+              "n": 592,
+              "wins": 500,
+              "losses": 92,
+              "win_rate": 0.844595,
+              "wilson_lower_95": 0.813198,
+              "avg_abs_delta_points": 33.741,
+              "avg_abs_ret10m_to_trigger": 4.5e-05
+            },
+            "10_39bp": {
+              "n": 1195,
+              "wins": 987,
+              "losses": 208,
+              "win_rate": 0.825941,
+              "wilson_lower_95": 0.803408,
+              "avg_abs_delta_points": 35.2226,
+              "avg_abs_ret10m_to_trigger": 0.000232
+            },
+            "40bp_plus": {
+              "n": 929,
+              "wins": 670,
+              "losses": 259,
+              "win_rate": 0.721206,
+              "wilson_lower_95": 0.691505,
+              "avg_abs_delta_points": 34.8253,
+              "avg_abs_ret10m_to_trigger": 0.000815
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 3745,
+              "wins": 3412,
+              "losses": 333,
+              "win_rate": 0.911081,
+              "wilson_lower_95": 0.901539,
+              "avg_abs_delta_points": 73.2504,
+              "avg_abs_ret10m_to_trigger": 0.000467
+            },
+            "0_9bp": {
+              "n": 606,
+              "wins": 560,
+              "losses": 46,
+              "win_rate": 0.924092,
+              "wilson_lower_95": 0.900231,
+              "avg_abs_delta_points": 71.6682,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1427,
+              "wins": 1321,
+              "losses": 106,
+              "win_rate": 0.925718,
+              "wilson_lower_95": 0.91094,
+              "avg_abs_delta_points": 72.3422,
+              "avg_abs_ret10m_to_trigger": 0.000242
+            },
+            "40bp_plus": {
+              "n": 1712,
+              "wins": 1531,
+              "losses": 181,
+              "win_rate": 0.894276,
+              "wilson_lower_95": 0.878817,
+              "avg_abs_delta_points": 74.5675,
+              "avg_abs_ret10m_to_trigger": 0.000803
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7186,
+              "wins": 7039,
+              "losses": 147,
+              "win_rate": 0.979544,
+              "wilson_lower_95": 0.976005,
+              "avg_abs_delta_points": 233.5612,
+              "avg_abs_ret10m_to_trigger": 0.000917
+            },
+            "0_9bp": {
+              "n": 629,
+              "wins": 619,
+              "losses": 10,
+              "win_rate": 0.984102,
+              "wilson_lower_95": 0.970984,
+              "avg_abs_delta_points": 184.436,
+              "avg_abs_ret10m_to_trigger": 4.9e-05
+            },
+            "10_39bp": {
+              "n": 1815,
+              "wins": 1781,
+              "losses": 34,
+              "win_rate": 0.981267,
+              "wilson_lower_95": 0.973937,
+              "avg_abs_delta_points": 190.1136,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 4742,
+              "wins": 4639,
+              "losses": 103,
+              "win_rate": 0.978279,
+              "wilson_lower_95": 0.973727,
+              "avg_abs_delta_points": 256.7069,
+              "avg_abs_ret10m_to_trigger": 0.001289
+            }
+          }
+        },
+        "6": {
+          "0_19": {
+            "all_ret10": {
+              "n": 1684,
+              "wins": 1064,
+              "losses": 620,
+              "win_rate": 0.631829,
+              "wilson_lower_95": 0.608517,
+              "avg_abs_delta_points": 10.2725,
+              "avg_abs_ret10m_to_trigger": 0.000365
+            },
+            "0_9bp": {
+              "n": 435,
+              "wins": 284,
+              "losses": 151,
+              "win_rate": 0.652874,
+              "wilson_lower_95": 0.606974,
+              "avg_abs_delta_points": 10.5141,
+              "avg_abs_ret10m_to_trigger": 3.9e-05
+            },
+            "10_39bp": {
+              "n": 717,
+              "wins": 446,
+              "losses": 271,
+              "win_rate": 0.622036,
+              "wilson_lower_95": 0.585983,
+              "avg_abs_delta_points": 10.6721,
+              "avg_abs_ret10m_to_trigger": 0.000232
+            },
+            "40bp_plus": {
+              "n": 532,
+              "wins": 334,
+              "losses": 198,
+              "win_rate": 0.62782,
+              "wilson_lower_95": 0.585964,
+              "avg_abs_delta_points": 9.5365,
+              "avg_abs_ret10m_to_trigger": 0.00081
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 2535,
+              "wins": 2016,
+              "losses": 519,
+              "win_rate": 0.795266,
+              "wilson_lower_95": 0.779117,
+              "avg_abs_delta_points": 34.8262,
+              "avg_abs_ret10m_to_trigger": 0.000378
+            },
+            "0_9bp": {
+              "n": 564,
+              "wins": 477,
+              "losses": 87,
+              "win_rate": 0.845745,
+              "wilson_lower_95": 0.813605,
+              "avg_abs_delta_points": 33.8721,
+              "avg_abs_ret10m_to_trigger": 4.5e-05
+            },
+            "10_39bp": {
+              "n": 1132,
+              "wins": 937,
+              "losses": 195,
+              "win_rate": 0.827739,
+              "wilson_lower_95": 0.804642,
+              "avg_abs_delta_points": 35.2575,
+              "avg_abs_ret10m_to_trigger": 0.00023
+            },
+            "40bp_plus": {
+              "n": 839,
+              "wins": 602,
+              "losses": 237,
+              "win_rate": 0.717521,
+              "wilson_lower_95": 0.686119,
+              "avg_abs_delta_points": 34.8856,
+              "avg_abs_ret10m_to_trigger": 0.000803
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 3552,
+              "wins": 3240,
+              "losses": 312,
+              "win_rate": 0.912162,
+              "wilson_lower_95": 0.902402,
+              "avg_abs_delta_points": 73.3166,
+              "avg_abs_ret10m_to_trigger": 0.000457
+            },
+            "0_9bp": {
+              "n": 590,
+              "wins": 546,
+              "losses": 44,
+              "win_rate": 0.925424,
+              "wilson_lower_95": 0.901364,
+              "avg_abs_delta_points": 71.6895,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1375,
+              "wins": 1274,
+              "losses": 101,
+              "win_rate": 0.926545,
+              "wilson_lower_95": 0.911536,
+              "avg_abs_delta_points": 72.5001,
+              "avg_abs_ret10m_to_trigger": 0.000241
+            },
+            "40bp_plus": {
+              "n": 1587,
+              "wins": 1420,
+              "losses": 167,
+              "win_rate": 0.89477,
+              "wilson_lower_95": 0.878708,
+              "avg_abs_delta_points": 74.6288,
+              "avg_abs_ret10m_to_trigger": 0.000797
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7031,
+              "wins": 6891,
+              "losses": 140,
+              "win_rate": 0.980088,
+              "wilson_lower_95": 0.976551,
+              "avg_abs_delta_points": 234.5014,
+              "avg_abs_ret10m_to_trigger": 0.000903
+            },
+            "0_9bp": {
+              "n": 628,
+              "wins": 618,
+              "losses": 10,
+              "win_rate": 0.984076,
+              "wilson_lower_95": 0.970938,
+              "avg_abs_delta_points": 184.4825,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1796,
+              "wins": 1762,
+              "losses": 34,
+              "win_rate": 0.981069,
+              "wilson_lower_95": 0.973663,
+              "avg_abs_delta_points": 190.4579,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 4607,
+              "wins": 4511,
+              "losses": 96,
+              "win_rate": 0.979162,
+              "wilson_lower_95": 0.974621,
+              "avg_abs_delta_points": 258.4897,
+              "avg_abs_ret10m_to_trigger": 0.001275
+            }
+          }
+        },
+        "7": {
+          "0_19": {
+            "all_ret10": {
+              "n": 1511,
+              "wins": 955,
+              "losses": 556,
+              "win_rate": 0.632032,
+              "wilson_lower_95": 0.607409,
+              "avg_abs_delta_points": 10.3868,
+              "avg_abs_ret10m_to_trigger": 0.000366
+            },
+            "0_9bp": {
+              "n": 394,
+              "wins": 256,
+              "losses": 138,
+              "win_rate": 0.649746,
+              "wilson_lower_95": 0.6014,
+              "avg_abs_delta_points": 10.6275,
+              "avg_abs_ret10m_to_trigger": 3.9e-05
+            },
+            "10_39bp": {
+              "n": 636,
+              "wins": 398,
+              "losses": 238,
+              "win_rate": 0.625786,
+              "wilson_lower_95": 0.587527,
+              "avg_abs_delta_points": 10.7696,
+              "avg_abs_ret10m_to_trigger": 0.000233
+            },
+            "40bp_plus": {
+              "n": 481,
+              "wins": 301,
+              "losses": 180,
+              "win_rate": 0.62578,
+              "wilson_lower_95": 0.581696,
+              "avg_abs_delta_points": 9.6837,
+              "avg_abs_ret10m_to_trigger": 0.00081
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 2346,
+              "wins": 1877,
+              "losses": 469,
+              "win_rate": 0.800085,
+              "wilson_lower_95": 0.783417,
+              "avg_abs_delta_points": 34.8206,
+              "avg_abs_ret10m_to_trigger": 0.000372
+            },
+            "0_9bp": {
+              "n": 536,
+              "wins": 453,
+              "losses": 83,
+              "win_rate": 0.845149,
+              "wilson_lower_95": 0.812077,
+              "avg_abs_delta_points": 33.9775,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1052,
+              "wins": 870,
+              "losses": 182,
+              "win_rate": 0.826996,
+              "wilson_lower_95": 0.80296,
+              "avg_abs_delta_points": 35.2217,
+              "avg_abs_ret10m_to_trigger": 0.00023
+            },
+            "40bp_plus": {
+              "n": 758,
+              "wins": 554,
+              "losses": 204,
+              "win_rate": 0.730871,
+              "wilson_lower_95": 0.698191,
+              "avg_abs_delta_points": 34.86,
+              "avg_abs_ret10m_to_trigger": 0.0008
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 3359,
+              "wins": 3069,
+              "losses": 290,
+              "win_rate": 0.913665,
+              "wilson_lower_95": 0.903688,
+              "avg_abs_delta_points": 73.401,
+              "avg_abs_ret10m_to_trigger": 0.00045
+            },
+            "0_9bp": {
+              "n": 568,
+              "wins": 525,
+              "losses": 43,
+              "win_rate": 0.924296,
+              "wilson_lower_95": 0.899578,
+              "avg_abs_delta_points": 71.6818,
+              "avg_abs_ret10m_to_trigger": 4.7e-05
+            },
+            "10_39bp": {
+              "n": 1319,
+              "wins": 1227,
+              "losses": 92,
+              "win_rate": 0.93025,
+              "wilson_lower_95": 0.915217,
+              "avg_abs_delta_points": 72.6315,
+              "avg_abs_ret10m_to_trigger": 0.000241
+            },
+            "40bp_plus": {
+              "n": 1472,
+              "wins": 1317,
+              "losses": 155,
+              "win_rate": 0.894701,
+              "wilson_lower_95": 0.87798,
+              "avg_abs_delta_points": 74.754,
+              "avg_abs_ret10m_to_trigger": 0.000794
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 6846,
+              "wins": 6710,
+              "losses": 136,
+              "win_rate": 0.980134,
+              "wilson_lower_95": 0.97655,
+              "avg_abs_delta_points": 235.5856,
+              "avg_abs_ret10m_to_trigger": 0.000892
+            },
+            "0_9bp": {
+              "n": 619,
+              "wins": 609,
+              "losses": 10,
+              "win_rate": 0.983845,
+              "wilson_lower_95": 0.97052,
+              "avg_abs_delta_points": 184.66,
+              "avg_abs_ret10m_to_trigger": 4.9e-05
+            },
+            "10_39bp": {
+              "n": 1769,
+              "wins": 1736,
+              "losses": 33,
+              "win_rate": 0.981345,
+              "wilson_lower_95": 0.973918,
+              "avg_abs_delta_points": 191.2495,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 4458,
+              "wins": 4365,
+              "losses": 93,
+              "win_rate": 0.979139,
+              "wilson_lower_95": 0.974512,
+              "avg_abs_delta_points": 260.2499,
+              "avg_abs_ret10m_to_trigger": 0.001265
+            }
+          }
+        },
+        "8": {
+          "0_19": {
+            "all_ret10": {
+              "n": 1356,
+              "wins": 859,
+              "losses": 497,
+              "win_rate": 0.633481,
+              "wilson_lower_95": 0.60749,
+              "avg_abs_delta_points": 10.3603,
+              "avg_abs_ret10m_to_trigger": 0.000371
+            },
+            "0_9bp": {
+              "n": 349,
+              "wins": 225,
+              "losses": 124,
+              "win_rate": 0.644699,
+              "wilson_lower_95": 0.59316,
+              "avg_abs_delta_points": 10.6696,
+              "avg_abs_ret10m_to_trigger": 3.9e-05
+            },
+            "10_39bp": {
+              "n": 571,
+              "wins": 360,
+              "losses": 211,
+              "win_rate": 0.630473,
+              "wilson_lower_95": 0.590133,
+              "avg_abs_delta_points": 10.6918,
+              "avg_abs_ret10m_to_trigger": 0.000232
+            },
+            "40bp_plus": {
+              "n": 436,
+              "wins": 274,
+              "losses": 162,
+              "win_rate": 0.62844,
+              "wilson_lower_95": 0.582145,
+              "avg_abs_delta_points": 9.6786,
+              "avg_abs_ret10m_to_trigger": 0.000819
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 2159,
+              "wins": 1741,
+              "losses": 418,
+              "win_rate": 0.806392,
+              "wilson_lower_95": 0.789186,
+              "avg_abs_delta_points": 34.7843,
+              "avg_abs_ret10m_to_trigger": 0.000366
+            },
+            "0_9bp": {
+              "n": 501,
+              "wins": 424,
+              "losses": 77,
+              "win_rate": 0.846307,
+              "wilson_lower_95": 0.812101,
+              "avg_abs_delta_points": 33.866,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 976,
+              "wins": 815,
+              "losses": 161,
+              "win_rate": 0.835041,
+              "wilson_lower_95": 0.810451,
+              "avg_abs_delta_points": 35.2879,
+              "avg_abs_ret10m_to_trigger": 0.000228
+            },
+            "40bp_plus": {
+              "n": 682,
+              "wins": 502,
+              "losses": 180,
+              "win_rate": 0.73607,
+              "wilson_lower_95": 0.701734,
+              "avg_abs_delta_points": 34.7384,
+              "avg_abs_ret10m_to_trigger": 0.0008
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 3143,
+              "wins": 2874,
+              "losses": 269,
+              "win_rate": 0.914413,
+              "wilson_lower_95": 0.90412,
+              "avg_abs_delta_points": 73.5686,
+              "avg_abs_ret10m_to_trigger": 0.000443
+            },
+            "0_9bp": {
+              "n": 551,
+              "wins": 511,
+              "losses": 40,
+              "win_rate": 0.927405,
+              "wilson_lower_95": 0.902653,
+              "avg_abs_delta_points": 71.6222,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1235,
+              "wins": 1152,
+              "losses": 83,
+              "win_rate": 0.932794,
+              "wilson_lower_95": 0.917444,
+              "avg_abs_delta_points": 72.7485,
+              "avg_abs_ret10m_to_trigger": 0.00024
+            },
+            "40bp_plus": {
+              "n": 1357,
+              "wins": 1211,
+              "losses": 146,
+              "win_rate": 0.89241,
+              "wilson_lower_95": 0.874801,
+              "avg_abs_delta_points": 75.1053,
+              "avg_abs_ret10m_to_trigger": 0.000787
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 6588,
+              "wins": 6461,
+              "losses": 127,
+              "win_rate": 0.980723,
+              "wilson_lower_95": 0.977111,
+              "avg_abs_delta_points": 236.974,
+              "avg_abs_ret10m_to_trigger": 0.000876
+            },
+            "0_9bp": {
+              "n": 612,
+              "wins": 602,
+              "losses": 10,
+              "win_rate": 0.98366,
+              "wilson_lower_95": 0.970185,
+              "avg_abs_delta_points": 184.9899,
+              "avg_abs_ret10m_to_trigger": 4.9e-05
+            },
+            "10_39bp": {
+              "n": 1722,
+              "wins": 1690,
+              "losses": 32,
+              "win_rate": 0.981417,
+              "wilson_lower_95": 0.973884,
+              "avg_abs_delta_points": 192.4825,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 4254,
+              "wins": 4169,
+              "losses": 85,
+              "win_rate": 0.980019,
+              "wilson_lower_95": 0.97536,
+              "avg_abs_delta_points": 262.4627,
+              "avg_abs_ret10m_to_trigger": 0.001249
+            }
+          }
+        },
+        "9": {
+          "0_19": {
+            "all_ret10": {
+              "n": 1198,
+              "wins": 760,
+              "losses": 438,
+              "win_rate": 0.634391,
+              "wilson_lower_95": 0.606729,
+              "avg_abs_delta_points": 10.3604,
+              "avg_abs_ret10m_to_trigger": 0.000379
+            },
+            "0_9bp": {
+              "n": 302,
+              "wins": 196,
+              "losses": 106,
+              "win_rate": 0.649007,
+              "wilson_lower_95": 0.593611,
+              "avg_abs_delta_points": 10.7749,
+              "avg_abs_ret10m_to_trigger": 3.9e-05
+            },
+            "10_39bp": {
+              "n": 502,
+              "wins": 316,
+              "losses": 186,
+              "win_rate": 0.629482,
+              "wilson_lower_95": 0.586401,
+              "avg_abs_delta_points": 10.6542,
+              "avg_abs_ret10m_to_trigger": 0.000232
+            },
+            "40bp_plus": {
+              "n": 394,
+              "wins": 248,
+              "losses": 146,
+              "win_rate": 0.629442,
+              "wilson_lower_95": 0.580718,
+              "avg_abs_delta_points": 9.6682,
+              "avg_abs_ret10m_to_trigger": 0.000828
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 1925,
+              "wins": 1550,
+              "losses": 375,
+              "win_rate": 0.805195,
+              "wilson_lower_95": 0.786902,
+              "avg_abs_delta_points": 34.88,
+              "avg_abs_ret10m_to_trigger": 0.000366
+            },
+            "0_9bp": {
+              "n": 454,
+              "wins": 388,
+              "losses": 66,
+              "win_rate": 0.854626,
+              "wilson_lower_95": 0.819226,
+              "avg_abs_delta_points": 33.8371,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 871,
+              "wins": 725,
+              "losses": 146,
+              "win_rate": 0.832377,
+              "wilson_lower_95": 0.806122,
+              "avg_abs_delta_points": 35.4211,
+              "avg_abs_ret10m_to_trigger": 0.000228
+            },
+            "40bp_plus": {
+              "n": 600,
+              "wins": 437,
+              "losses": 163,
+              "win_rate": 0.728333,
+              "wilson_lower_95": 0.691371,
+              "avg_abs_delta_points": 34.8836,
+              "avg_abs_ret10m_to_trigger": 0.000812
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 2868,
+              "wins": 2632,
+              "losses": 236,
+              "win_rate": 0.917713,
+              "wilson_lower_95": 0.907088,
+              "avg_abs_delta_points": 73.7605,
+              "avg_abs_ret10m_to_trigger": 0.000432
+            },
+            "0_9bp": {
+              "n": 511,
+              "wins": 475,
+              "losses": 36,
+              "win_rate": 0.92955,
+              "wilson_lower_95": 0.904008,
+              "avg_abs_delta_points": 71.6765,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1157,
+              "wins": 1081,
+              "losses": 76,
+              "win_rate": 0.934313,
+              "wilson_lower_95": 0.918552,
+              "avg_abs_delta_points": 72.9537,
+              "avg_abs_ret10m_to_trigger": 0.00024
+            },
+            "40bp_plus": {
+              "n": 1200,
+              "wins": 1076,
+              "losses": 124,
+              "win_rate": 0.896667,
+              "wilson_lower_95": 0.878159,
+              "avg_abs_delta_points": 75.426,
+              "avg_abs_ret10m_to_trigger": 0.000781
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 6282,
+              "wins": 6172,
+              "losses": 110,
+              "win_rate": 0.98249,
+              "wilson_lower_95": 0.978939,
+              "avg_abs_delta_points": 238.7604,
+              "avg_abs_ret10m_to_trigger": 0.000865
+            },
+            "0_9bp": {
+              "n": 597,
+              "wins": 587,
+              "losses": 10,
+              "win_rate": 0.98325,
+              "wilson_lower_95": 0.969443,
+              "avg_abs_delta_points": 185.1589,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1667,
+              "wins": 1639,
+              "losses": 28,
+              "win_rate": 0.983203,
+              "wilson_lower_95": 0.975831,
+              "avg_abs_delta_points": 193.0169,
+              "avg_abs_ret10m_to_trigger": 0.000247
+            },
+            "40bp_plus": {
+              "n": 4018,
+              "wins": 3946,
+              "losses": 72,
+              "win_rate": 0.982081,
+              "wilson_lower_95": 0.977494,
+              "avg_abs_delta_points": 265.7027,
+              "avg_abs_ret10m_to_trigger": 0.001242
+            }
+          }
+        },
+        "10": {
+          "0_19": {
+            "all_ret10": {
+              "n": 1019,
+              "wins": 654,
+              "losses": 365,
+              "win_rate": 0.641806,
+              "wilson_lower_95": 0.611884,
+              "avg_abs_delta_points": 10.4948,
+              "avg_abs_ret10m_to_trigger": 0.000385
+            },
+            "0_9bp": {
+              "n": 251,
+              "wins": 166,
+              "losses": 85,
+              "win_rate": 0.661355,
+              "wilson_lower_95": 0.600767,
+              "avg_abs_delta_points": 11.1801,
+              "avg_abs_ret10m_to_trigger": 3.8e-05
+            },
+            "10_39bp": {
+              "n": 422,
+              "wins": 271,
+              "losses": 151,
+              "win_rate": 0.64218,
+              "wilson_lower_95": 0.59535,
+              "avg_abs_delta_points": 10.7212,
+              "avg_abs_ret10m_to_trigger": 0.000231
+            },
+            "40bp_plus": {
+              "n": 346,
+              "wins": 217,
+              "losses": 129,
+              "win_rate": 0.627168,
+              "wilson_lower_95": 0.57508,
+              "avg_abs_delta_points": 9.7215,
+              "avg_abs_ret10m_to_trigger": 0.000826
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 1698,
+              "wins": 1371,
+              "losses": 327,
+              "win_rate": 0.80742,
+              "wilson_lower_95": 0.787979,
+              "avg_abs_delta_points": 35.0395,
+              "avg_abs_ret10m_to_trigger": 0.000364
+            },
+            "0_9bp": {
+              "n": 402,
+              "wins": 346,
+              "losses": 56,
+              "win_rate": 0.860697,
+              "wilson_lower_95": 0.823421,
+              "avg_abs_delta_points": 34.0589,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 770,
+              "wins": 638,
+              "losses": 132,
+              "win_rate": 0.828571,
+              "wilson_lower_95": 0.800336,
+              "avg_abs_delta_points": 35.5122,
+              "avg_abs_ret10m_to_trigger": 0.000227
+            },
+            "40bp_plus": {
+              "n": 526,
+              "wins": 387,
+              "losses": 139,
+              "win_rate": 0.735741,
+              "wilson_lower_95": 0.696448,
+              "avg_abs_delta_points": 35.0969,
+              "avg_abs_ret10m_to_trigger": 0.000811
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 2580,
+              "wins": 2374,
+              "losses": 206,
+              "win_rate": 0.920155,
+              "wilson_lower_95": 0.90906,
+              "avg_abs_delta_points": 73.7841,
+              "avg_abs_ret10m_to_trigger": 0.000422
+            },
+            "0_9bp": {
+              "n": 473,
+              "wins": 443,
+              "losses": 30,
+              "win_rate": 0.936575,
+              "wilson_lower_95": 0.910901,
+              "avg_abs_delta_points": 71.7415,
+              "avg_abs_ret10m_to_trigger": 4.7e-05
+            },
+            "10_39bp": {
+              "n": 1052,
+              "wins": 981,
+              "losses": 71,
+              "win_rate": 0.93251,
+              "wilson_lower_95": 0.915722,
+              "avg_abs_delta_points": 73.0089,
+              "avg_abs_ret10m_to_trigger": 0.00024
+            },
+            "40bp_plus": {
+              "n": 1055,
+              "wins": 950,
+              "losses": 105,
+              "win_rate": 0.900474,
+              "wilson_lower_95": 0.88093,
+              "avg_abs_delta_points": 75.4728,
+              "avg_abs_ret10m_to_trigger": 0.000772
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 5920,
+              "wins": 5821,
+              "losses": 99,
+              "win_rate": 0.983277,
+              "wilson_lower_95": 0.979683,
+              "avg_abs_delta_points": 240.6665,
+              "avg_abs_ret10m_to_trigger": 0.000857
+            },
+            "0_9bp": {
+              "n": 568,
+              "wins": 559,
+              "losses": 9,
+              "win_rate": 0.984155,
+              "wilson_lower_95": 0.970163,
+              "avg_abs_delta_points": 185.6276,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1570,
+              "wins": 1547,
+              "losses": 23,
+              "win_rate": 0.98535,
+              "wilson_lower_95": 0.978113,
+              "avg_abs_delta_points": 193.824,
+              "avg_abs_ret10m_to_trigger": 0.000247
+            },
+            "40bp_plus": {
+              "n": 3782,
+              "wins": 3715,
+              "losses": 67,
+              "win_rate": 0.982285,
+              "wilson_lower_95": 0.977565,
+              "avg_abs_delta_points": 268.378,
+              "avg_abs_ret10m_to_trigger": 0.001231
+            }
+          }
+        },
+        "11": {
+          "0_19": {
+            "all_ret10": {
+              "n": 800,
+              "wins": 520,
+              "losses": 280,
+              "win_rate": 0.65,
+              "wilson_lower_95": 0.616302,
+              "avg_abs_delta_points": 10.4729,
+              "avg_abs_ret10m_to_trigger": 0.000407
+            },
+            "0_9bp": {
+              "n": 189,
+              "wins": 126,
+              "losses": 63,
+              "win_rate": 0.666667,
+              "wilson_lower_95": 0.596729,
+              "avg_abs_delta_points": 11.4337,
+              "avg_abs_ret10m_to_trigger": 3.6e-05
+            },
+            "10_39bp": {
+              "n": 319,
+              "wins": 207,
+              "losses": 112,
+              "win_rate": 0.648903,
+              "wilson_lower_95": 0.595034,
+              "avg_abs_delta_points": 10.6676,
+              "avg_abs_ret10m_to_trigger": 0.00023
+            },
+            "40bp_plus": {
+              "n": 292,
+              "wins": 187,
+              "losses": 105,
+              "win_rate": 0.640411,
+              "wilson_lower_95": 0.583873,
+              "avg_abs_delta_points": 9.6381,
+              "avg_abs_ret10m_to_trigger": 0.000839
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 1406,
+              "wins": 1136,
+              "losses": 270,
+              "win_rate": 0.807966,
+              "wilson_lower_95": 0.786548,
+              "avg_abs_delta_points": 35.2157,
+              "avg_abs_ret10m_to_trigger": 0.000364
+            },
+            "0_9bp": {
+              "n": 350,
+              "wins": 301,
+              "losses": 49,
+              "win_rate": 0.86,
+              "wilson_lower_95": 0.819726,
+              "avg_abs_delta_points": 34.1483,
+              "avg_abs_ret10m_to_trigger": 4.3e-05
+            },
+            "10_39bp": {
+              "n": 631,
+              "wins": 516,
+              "losses": 115,
+              "win_rate": 0.81775,
+              "wilson_lower_95": 0.785734,
+              "avg_abs_delta_points": 35.8986,
+              "avg_abs_ret10m_to_trigger": 0.000227
+            },
+            "40bp_plus": {
+              "n": 425,
+              "wins": 319,
+              "losses": 106,
+              "win_rate": 0.750588,
+              "wilson_lower_95": 0.707331,
+              "avg_abs_delta_points": 35.0807,
+              "avg_abs_ret10m_to_trigger": 0.000833
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 2225,
+              "wins": 2051,
+              "losses": 174,
+              "win_rate": 0.921798,
+              "wilson_lower_95": 0.9099,
+              "avg_abs_delta_points": 73.8917,
+              "avg_abs_ret10m_to_trigger": 0.000412
+            },
+            "0_9bp": {
+              "n": 422,
+              "wins": 393,
+              "losses": 29,
+              "win_rate": 0.93128,
+              "wilson_lower_95": 0.903048,
+              "avg_abs_delta_points": 71.5799,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 925,
+              "wins": 868,
+              "losses": 57,
+              "win_rate": 0.938378,
+              "wilson_lower_95": 0.920995,
+              "avg_abs_delta_points": 73.184,
+              "avg_abs_ret10m_to_trigger": 0.00024
+            },
+            "40bp_plus": {
+              "n": 878,
+              "wins": 790,
+              "losses": 88,
+              "win_rate": 0.899772,
+              "wilson_lower_95": 0.878134,
+              "avg_abs_delta_points": 75.7483,
+              "avg_abs_ret10m_to_trigger": 0.000769
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 5349,
+              "wins": 5264,
+              "losses": 85,
+              "win_rate": 0.984109,
+              "wilson_lower_95": 0.980394,
+              "avg_abs_delta_points": 242.1399,
+              "avg_abs_ret10m_to_trigger": 0.000836
+            },
+            "0_9bp": {
+              "n": 528,
+              "wins": 521,
+              "losses": 7,
+              "win_rate": 0.986742,
+              "wilson_lower_95": 0.97289,
+              "avg_abs_delta_points": 186.3863,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1452,
+              "wins": 1431,
+              "losses": 21,
+              "win_rate": 0.985537,
+              "wilson_lower_95": 0.977991,
+              "avg_abs_delta_points": 195.83,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 3369,
+              "wins": 3312,
+              "losses": 57,
+              "win_rate": 0.983081,
+              "wilson_lower_95": 0.978144,
+              "avg_abs_delta_points": 270.8369,
+              "avg_abs_ret10m_to_trigger": 0.001212
+            }
+          }
+        },
+        "12": {
+          "0_19": {
+            "all_ret10": {
+              "n": 568,
+              "wins": 383,
+              "losses": 185,
+              "win_rate": 0.674296,
+              "wilson_lower_95": 0.634696,
+              "avg_abs_delta_points": 10.5424,
+              "avg_abs_ret10m_to_trigger": 0.000432
+            },
+            "0_9bp": {
+              "n": 126,
+              "wins": 85,
+              "losses": 41,
+              "win_rate": 0.674603,
+              "wilson_lower_95": 0.588682,
+              "avg_abs_delta_points": 12.0674,
+              "avg_abs_ret10m_to_trigger": 3.5e-05
+            },
+            "10_39bp": {
+              "n": 219,
+              "wins": 147,
+              "losses": 72,
+              "win_rate": 0.671233,
+              "wilson_lower_95": 0.606531,
+              "avg_abs_delta_points": 10.7943,
+              "avg_abs_ret10m_to_trigger": 0.000235
+            },
+            "40bp_plus": {
+              "n": 223,
+              "wins": 151,
+              "losses": 72,
+              "win_rate": 0.67713,
+              "wilson_lower_95": 0.613209,
+              "avg_abs_delta_points": 9.4332,
+              "avg_abs_ret10m_to_trigger": 0.000849
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 1087,
+              "wins": 883,
+              "losses": 204,
+              "win_rate": 0.812328,
+              "wilson_lower_95": 0.788031,
+              "avg_abs_delta_points": 35.5071,
+              "avg_abs_ret10m_to_trigger": 0.000368
+            },
+            "0_9bp": {
+              "n": 267,
+              "wins": 230,
+              "losses": 37,
+              "win_rate": 0.861423,
+              "wilson_lower_95": 0.81483,
+              "avg_abs_delta_points": 34.2398,
+              "avg_abs_ret10m_to_trigger": 4.3e-05
+            },
+            "10_39bp": {
+              "n": 491,
+              "wins": 405,
+              "losses": 86,
+              "win_rate": 0.824847,
+              "wilson_lower_95": 0.78874,
+              "avg_abs_delta_points": 36.4572,
+              "avg_abs_ret10m_to_trigger": 0.000225
+            },
+            "40bp_plus": {
+              "n": 329,
+              "wins": 248,
+              "losses": 81,
+              "win_rate": 0.753799,
+              "wilson_lower_95": 0.704496,
+              "avg_abs_delta_points": 35.1177,
+              "avg_abs_ret10m_to_trigger": 0.000846
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 1796,
+              "wins": 1655,
+              "losses": 141,
+              "win_rate": 0.921492,
+              "wilson_lower_95": 0.908134,
+              "avg_abs_delta_points": 73.8452,
+              "avg_abs_ret10m_to_trigger": 0.000411
+            },
+            "0_9bp": {
+              "n": 340,
+              "wins": 317,
+              "losses": 23,
+              "win_rate": 0.932353,
+              "wilson_lower_95": 0.900541,
+              "avg_abs_delta_points": 71.724,
+              "avg_abs_ret10m_to_trigger": 4.7e-05
+            },
+            "10_39bp": {
+              "n": 764,
+              "wins": 714,
+              "losses": 50,
+              "win_rate": 0.934555,
+              "wilson_lower_95": 0.914753,
+              "avg_abs_delta_points": 72.9817,
+              "avg_abs_ret10m_to_trigger": 0.000241
+            },
+            "40bp_plus": {
+              "n": 692,
+              "wins": 624,
+              "losses": 68,
+              "win_rate": 0.901734,
+              "wilson_lower_95": 0.877288,
+              "avg_abs_delta_points": 75.8408,
+              "avg_abs_ret10m_to_trigger": 0.000777
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 4570,
+              "wins": 4504,
+              "losses": 66,
+              "win_rate": 0.985558,
+              "wilson_lower_95": 0.981669,
+              "avg_abs_delta_points": 245.4839,
+              "avg_abs_ret10m_to_trigger": 0.000834
+            },
+            "0_9bp": {
+              "n": 460,
+              "wins": 456,
+              "losses": 4,
+              "win_rate": 0.991304,
+              "wilson_lower_95": 0.977857,
+              "avg_abs_delta_points": 185.663,
+              "avg_abs_ret10m_to_trigger": 5.1e-05
+            },
+            "10_39bp": {
+              "n": 1237,
+              "wins": 1222,
+              "losses": 15,
+              "win_rate": 0.987874,
+              "wilson_lower_95": 0.980089,
+              "avg_abs_delta_points": 197.7826,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 2873,
+              "wins": 2826,
+              "losses": 47,
+              "win_rate": 0.983641,
+              "wilson_lower_95": 0.978315,
+              "avg_abs_delta_points": 275.6002,
+              "avg_abs_ret10m_to_trigger": 0.001211
+            }
+          }
+        },
+        "13": {
+          "0_19": {
+            "all_ret10": {
+              "n": 325,
+              "wins": 225,
+              "losses": 100,
+              "win_rate": 0.692308,
+              "wilson_lower_95": 0.640125,
+              "avg_abs_delta_points": 10.9653,
+              "avg_abs_ret10m_to_trigger": 0.000447
+            },
+            "0_9bp": {
+              "n": 71,
+              "wins": 48,
+              "losses": 23,
+              "win_rate": 0.676056,
+              "wilson_lower_95": 0.560609,
+              "avg_abs_delta_points": 12.2559,
+              "avg_abs_ret10m_to_trigger": 3.4e-05
+            },
+            "10_39bp": {
+              "n": 114,
+              "wins": 84,
+              "losses": 30,
+              "win_rate": 0.736842,
+              "wilson_lower_95": 0.649241,
+              "avg_abs_delta_points": 11.2704,
+              "avg_abs_ret10m_to_trigger": 0.000239
+            },
+            "40bp_plus": {
+              "n": 140,
+              "wins": 93,
+              "losses": 47,
+              "win_rate": 0.664286,
+              "wilson_lower_95": 0.582599,
+              "avg_abs_delta_points": 10.0624,
+              "avg_abs_ret10m_to_trigger": 0.000826
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 689,
+              "wins": 569,
+              "losses": 120,
+              "win_rate": 0.825835,
+              "wilson_lower_95": 0.79573,
+              "avg_abs_delta_points": 35.7243,
+              "avg_abs_ret10m_to_trigger": 0.000381
+            },
+            "0_9bp": {
+              "n": 171,
+              "wins": 154,
+              "losses": 17,
+              "win_rate": 0.900585,
+              "wilson_lower_95": 0.846565,
+              "avg_abs_delta_points": 35.0182,
+              "avg_abs_ret10m_to_trigger": 4.3e-05
+            },
+            "10_39bp": {
+              "n": 298,
+              "wins": 245,
+              "losses": 53,
+              "win_rate": 0.822148,
+              "wilson_lower_95": 0.774714,
+              "avg_abs_delta_points": 36.4704,
+              "avg_abs_ret10m_to_trigger": 0.000224
+            },
+            "40bp_plus": {
+              "n": 220,
+              "wins": 170,
+              "losses": 50,
+              "win_rate": 0.772727,
+              "wilson_lower_95": 0.712948,
+              "avg_abs_delta_points": 35.2626,
+              "avg_abs_ret10m_to_trigger": 0.000856
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 1197,
+              "wins": 1107,
+              "losses": 90,
+              "win_rate": 0.924812,
+              "wilson_lower_95": 0.908477,
+              "avg_abs_delta_points": 74.0504,
+              "avg_abs_ret10m_to_trigger": 0.000415
+            },
+            "0_9bp": {
+              "n": 236,
+              "wins": 224,
+              "losses": 12,
+              "win_rate": 0.949153,
+              "wilson_lower_95": 0.913239,
+              "avg_abs_delta_points": 71.1397,
+              "avg_abs_ret10m_to_trigger": 4.6e-05
+            },
+            "10_39bp": {
+              "n": 500,
+              "wins": 472,
+              "losses": 28,
+              "win_rate": 0.944,
+              "wilson_lower_95": 0.920255,
+              "avg_abs_delta_points": 73.9671,
+              "avg_abs_ret10m_to_trigger": 0.000238
+            },
+            "40bp_plus": {
+              "n": 461,
+              "wins": 411,
+              "losses": 50,
+              "win_rate": 0.89154,
+              "wilson_lower_95": 0.859851,
+              "avg_abs_delta_points": 75.6309,
+              "avg_abs_ret10m_to_trigger": 0.000795
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 3341,
+              "wins": 3299,
+              "losses": 42,
+              "win_rate": 0.987429,
+              "wilson_lower_95": 0.983052,
+              "avg_abs_delta_points": 248.0684,
+              "avg_abs_ret10m_to_trigger": 0.000807
+            },
+            "0_9bp": {
+              "n": 353,
+              "wins": 350,
+              "losses": 3,
+              "win_rate": 0.991501,
+              "wilson_lower_95": 0.975315,
+              "avg_abs_delta_points": 185.3376,
+              "avg_abs_ret10m_to_trigger": 5.2e-05
+            },
+            "10_39bp": {
+              "n": 931,
+              "wins": 919,
+              "losses": 12,
+              "win_rate": 0.987111,
+              "wilson_lower_95": 0.977606,
+              "avg_abs_delta_points": 200.1401,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 2057,
+              "wins": 2030,
+              "losses": 27,
+              "win_rate": 0.986874,
+              "wilson_lower_95": 0.980969,
+              "avg_abs_delta_points": 280.526,
+              "avg_abs_ret10m_to_trigger": 0.001189
+            }
+          }
+        }
+      },
+      "NO": {
+        "0": {
+          "0_19": {
+            "all_ret10": {
+              "n": 2551,
+              "wins": 1566,
+              "losses": 985,
+              "win_rate": 0.613877,
+              "wilson_lower_95": 0.594826,
+              "avg_abs_delta_points": 9.7933,
+              "avg_abs_ret10m_to_trigger": 0.000427
+            },
+            "0_9bp": {
+              "n": 600,
+              "wins": 398,
+              "losses": 202,
+              "win_rate": 0.663333,
+              "wilson_lower_95": 0.624587,
+              "avg_abs_delta_points": 9.6074,
+              "avg_abs_ret10m_to_trigger": 3.9e-05
+            },
+            "10_39bp": {
+              "n": 987,
+              "wins": 630,
+              "losses": 357,
+              "win_rate": 0.638298,
+              "wilson_lower_95": 0.607838,
+              "avg_abs_delta_points": 9.7891,
+              "avg_abs_ret10m_to_trigger": 0.000236
+            },
+            "40bp_plus": {
+              "n": 964,
+              "wins": 538,
+              "losses": 426,
+              "win_rate": 0.558091,
+              "wilson_lower_95": 0.526572,
+              "avg_abs_delta_points": 9.9134,
+              "avg_abs_ret10m_to_trigger": 0.000863
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 3444,
+              "wins": 2718,
+              "losses": 726,
+              "win_rate": 0.789199,
+              "wilson_lower_95": 0.775258,
+              "avg_abs_delta_points": 34.3553,
+              "avg_abs_ret10m_to_trigger": 0.000445
+            },
+            "0_9bp": {
+              "n": 654,
+              "wins": 534,
+              "losses": 120,
+              "win_rate": 0.816514,
+              "wilson_lower_95": 0.785029,
+              "avg_abs_delta_points": 33.8487,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1387,
+              "wins": 1149,
+              "losses": 238,
+              "win_rate": 0.828407,
+              "wilson_lower_95": 0.807664,
+              "avg_abs_delta_points": 34.3415,
+              "avg_abs_ret10m_to_trigger": 0.000234
+            },
+            "40bp_plus": {
+              "n": 1403,
+              "wins": 1035,
+              "losses": 368,
+              "win_rate": 0.737705,
+              "wilson_lower_95": 0.71406,
+              "avg_abs_delta_points": 34.6051,
+              "avg_abs_ret10m_to_trigger": 0.000841
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 4090,
+              "wins": 3718,
+              "losses": 372,
+              "win_rate": 0.909046,
+              "wilson_lower_95": 0.899846,
+              "avg_abs_delta_points": 73.329,
+              "avg_abs_ret10m_to_trigger": 0.000531
+            },
+            "0_9bp": {
+              "n": 622,
+              "wins": 588,
+              "losses": 34,
+              "win_rate": 0.945338,
+              "wilson_lower_95": 0.924586,
+              "avg_abs_delta_points": 71.7604,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1495,
+              "wins": 1385,
+              "losses": 110,
+              "win_rate": 0.926421,
+              "wilson_lower_95": 0.912066,
+              "avg_abs_delta_points": 72.7267,
+              "avg_abs_ret10m_to_trigger": 0.000241
+            },
+            "40bp_plus": {
+              "n": 1973,
+              "wins": 1745,
+              "losses": 228,
+              "win_rate": 0.88444,
+              "wilson_lower_95": 0.86958,
+              "avg_abs_delta_points": 74.2798,
+              "avg_abs_ret10m_to_trigger": 0.000902
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7585,
+              "wins": 7402,
+              "losses": 183,
+              "win_rate": 0.975873,
+              "wilson_lower_95": 0.972172,
+              "avg_abs_delta_points": 233.1465,
+              "avg_abs_ret10m_to_trigger": 0.000986
+            },
+            "0_9bp": {
+              "n": 660,
+              "wins": 644,
+              "losses": 16,
+              "win_rate": 0.975758,
+              "wilson_lower_95": 0.960985,
+              "avg_abs_delta_points": 179.8827,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1719,
+              "wins": 1674,
+              "losses": 45,
+              "win_rate": 0.973822,
+              "wilson_lower_95": 0.965152,
+              "avg_abs_delta_points": 189.991,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 5206,
+              "wins": 5084,
+              "losses": 122,
+              "win_rate": 0.976566,
+              "wilson_lower_95": 0.972091,
+              "avg_abs_delta_points": 254.1488,
+              "avg_abs_ret10m_to_trigger": 0.001349
+            }
+          }
+        },
+        "1": {
+          "0_19": {
+            "all_ret10": {
+              "n": 2551,
+              "wins": 1566,
+              "losses": 985,
+              "win_rate": 0.613877,
+              "wilson_lower_95": 0.594826,
+              "avg_abs_delta_points": 9.7933,
+              "avg_abs_ret10m_to_trigger": 0.000427
+            },
+            "0_9bp": {
+              "n": 600,
+              "wins": 398,
+              "losses": 202,
+              "win_rate": 0.663333,
+              "wilson_lower_95": 0.624587,
+              "avg_abs_delta_points": 9.6074,
+              "avg_abs_ret10m_to_trigger": 3.9e-05
+            },
+            "10_39bp": {
+              "n": 987,
+              "wins": 630,
+              "losses": 357,
+              "win_rate": 0.638298,
+              "wilson_lower_95": 0.607838,
+              "avg_abs_delta_points": 9.7891,
+              "avg_abs_ret10m_to_trigger": 0.000236
+            },
+            "40bp_plus": {
+              "n": 964,
+              "wins": 538,
+              "losses": 426,
+              "win_rate": 0.558091,
+              "wilson_lower_95": 0.526572,
+              "avg_abs_delta_points": 9.9134,
+              "avg_abs_ret10m_to_trigger": 0.000863
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 3444,
+              "wins": 2718,
+              "losses": 726,
+              "win_rate": 0.789199,
+              "wilson_lower_95": 0.775258,
+              "avg_abs_delta_points": 34.3553,
+              "avg_abs_ret10m_to_trigger": 0.000445
+            },
+            "0_9bp": {
+              "n": 654,
+              "wins": 534,
+              "losses": 120,
+              "win_rate": 0.816514,
+              "wilson_lower_95": 0.785029,
+              "avg_abs_delta_points": 33.8487,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1387,
+              "wins": 1149,
+              "losses": 238,
+              "win_rate": 0.828407,
+              "wilson_lower_95": 0.807664,
+              "avg_abs_delta_points": 34.3415,
+              "avg_abs_ret10m_to_trigger": 0.000234
+            },
+            "40bp_plus": {
+              "n": 1403,
+              "wins": 1035,
+              "losses": 368,
+              "win_rate": 0.737705,
+              "wilson_lower_95": 0.71406,
+              "avg_abs_delta_points": 34.6051,
+              "avg_abs_ret10m_to_trigger": 0.000841
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 4090,
+              "wins": 3718,
+              "losses": 372,
+              "win_rate": 0.909046,
+              "wilson_lower_95": 0.899846,
+              "avg_abs_delta_points": 73.329,
+              "avg_abs_ret10m_to_trigger": 0.000531
+            },
+            "0_9bp": {
+              "n": 622,
+              "wins": 588,
+              "losses": 34,
+              "win_rate": 0.945338,
+              "wilson_lower_95": 0.924586,
+              "avg_abs_delta_points": 71.7604,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1495,
+              "wins": 1385,
+              "losses": 110,
+              "win_rate": 0.926421,
+              "wilson_lower_95": 0.912066,
+              "avg_abs_delta_points": 72.7267,
+              "avg_abs_ret10m_to_trigger": 0.000241
+            },
+            "40bp_plus": {
+              "n": 1973,
+              "wins": 1745,
+              "losses": 228,
+              "win_rate": 0.88444,
+              "wilson_lower_95": 0.86958,
+              "avg_abs_delta_points": 74.2798,
+              "avg_abs_ret10m_to_trigger": 0.000902
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7585,
+              "wins": 7402,
+              "losses": 183,
+              "win_rate": 0.975873,
+              "wilson_lower_95": 0.972172,
+              "avg_abs_delta_points": 233.1465,
+              "avg_abs_ret10m_to_trigger": 0.000986
+            },
+            "0_9bp": {
+              "n": 660,
+              "wins": 644,
+              "losses": 16,
+              "win_rate": 0.975758,
+              "wilson_lower_95": 0.960985,
+              "avg_abs_delta_points": 179.8827,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1719,
+              "wins": 1674,
+              "losses": 45,
+              "win_rate": 0.973822,
+              "wilson_lower_95": 0.965152,
+              "avg_abs_delta_points": 189.991,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 5206,
+              "wins": 5084,
+              "losses": 122,
+              "win_rate": 0.976566,
+              "wilson_lower_95": 0.972091,
+              "avg_abs_delta_points": 254.1488,
+              "avg_abs_ret10m_to_trigger": 0.001349
+            }
+          }
+        },
+        "2": {
+          "0_19": {
+            "all_ret10": {
+              "n": 2395,
+              "wins": 1477,
+              "losses": 918,
+              "win_rate": 0.616701,
+              "wilson_lower_95": 0.597057,
+              "avg_abs_delta_points": 9.8643,
+              "avg_abs_ret10m_to_trigger": 0.000405
+            },
+            "0_9bp": {
+              "n": 593,
+              "wins": 394,
+              "losses": 199,
+              "win_rate": 0.664418,
+              "wilson_lower_95": 0.625462,
+              "avg_abs_delta_points": 9.6846,
+              "avg_abs_ret10m_to_trigger": 3.9e-05
+            },
+            "10_39bp": {
+              "n": 954,
+              "wins": 610,
+              "losses": 344,
+              "win_rate": 0.639413,
+              "wilson_lower_95": 0.60844,
+              "avg_abs_delta_points": 9.8816,
+              "avg_abs_ret10m_to_trigger": 0.000236
+            },
+            "40bp_plus": {
+              "n": 848,
+              "wins": 473,
+              "losses": 375,
+              "win_rate": 0.557783,
+              "wilson_lower_95": 0.524169,
+              "avg_abs_delta_points": 9.9706,
+              "avg_abs_ret10m_to_trigger": 0.000852
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 3360,
+              "wins": 2658,
+              "losses": 702,
+              "win_rate": 0.791071,
+              "wilson_lower_95": 0.776996,
+              "avg_abs_delta_points": 34.415,
+              "avg_abs_ret10m_to_trigger": 0.000429
+            },
+            "0_9bp": {
+              "n": 654,
+              "wins": 534,
+              "losses": 120,
+              "win_rate": 0.816514,
+              "wilson_lower_95": 0.785029,
+              "avg_abs_delta_points": 33.8487,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1381,
+              "wins": 1143,
+              "losses": 238,
+              "win_rate": 0.827661,
+              "wilson_lower_95": 0.80684,
+              "avg_abs_delta_points": 34.3741,
+              "avg_abs_ret10m_to_trigger": 0.000234
+            },
+            "40bp_plus": {
+              "n": 1325,
+              "wins": 981,
+              "losses": 344,
+              "win_rate": 0.740377,
+              "wilson_lower_95": 0.716099,
+              "avg_abs_delta_points": 34.7371,
+              "avg_abs_ret10m_to_trigger": 0.000823
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 4064,
+              "wins": 3696,
+              "losses": 368,
+              "win_rate": 0.909449,
+              "wilson_lower_95": 0.900235,
+              "avg_abs_delta_points": 73.3801,
+              "avg_abs_ret10m_to_trigger": 0.000524
+            },
+            "0_9bp": {
+              "n": 622,
+              "wins": 588,
+              "losses": 34,
+              "win_rate": 0.945338,
+              "wilson_lower_95": 0.924586,
+              "avg_abs_delta_points": 71.7604,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1495,
+              "wins": 1385,
+              "losses": 110,
+              "win_rate": 0.926421,
+              "wilson_lower_95": 0.912066,
+              "avg_abs_delta_points": 72.7267,
+              "avg_abs_ret10m_to_trigger": 0.000241
+            },
+            "40bp_plus": {
+              "n": 1947,
+              "wins": 1723,
+              "losses": 224,
+              "win_rate": 0.884951,
+              "wilson_lower_95": 0.870013,
+              "avg_abs_delta_points": 74.3993,
+              "avg_abs_ret10m_to_trigger": 0.000892
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7573,
+              "wins": 7393,
+              "losses": 180,
+              "win_rate": 0.976231,
+              "wilson_lower_95": 0.972551,
+              "avg_abs_delta_points": 233.2769,
+              "avg_abs_ret10m_to_trigger": 0.000983
+            },
+            "0_9bp": {
+              "n": 660,
+              "wins": 644,
+              "losses": 16,
+              "win_rate": 0.975758,
+              "wilson_lower_95": 0.960985,
+              "avg_abs_delta_points": 179.8827,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1719,
+              "wins": 1674,
+              "losses": 45,
+              "win_rate": 0.973822,
+              "wilson_lower_95": 0.965152,
+              "avg_abs_delta_points": 189.991,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 5194,
+              "wins": 5075,
+              "losses": 119,
+              "win_rate": 0.977089,
+              "wilson_lower_95": 0.972654,
+              "avg_abs_delta_points": 254.3876,
+              "avg_abs_ret10m_to_trigger": 0.001345
+            }
+          }
+        },
+        "3": {
+          "0_19": {
+            "all_ret10": {
+              "n": 2242,
+              "wins": 1386,
+              "losses": 856,
+              "win_rate": 0.618198,
+              "wilson_lower_95": 0.597902,
+              "avg_abs_delta_points": 9.9029,
+              "avg_abs_ret10m_to_trigger": 0.000393
+            },
+            "0_9bp": {
+              "n": 584,
+              "wins": 389,
+              "losses": 195,
+              "win_rate": 0.666096,
+              "wilson_lower_95": 0.62687,
+              "avg_abs_delta_points": 9.7441,
+              "avg_abs_ret10m_to_trigger": 3.9e-05
+            },
+            "10_39bp": {
+              "n": 890,
+              "wins": 566,
+              "losses": 324,
+              "win_rate": 0.635955,
+              "wilson_lower_95": 0.603821,
+              "avg_abs_delta_points": 9.9425,
+              "avg_abs_ret10m_to_trigger": 0.000234
+            },
+            "40bp_plus": {
+              "n": 768,
+              "wins": 431,
+              "losses": 337,
+              "win_rate": 0.561198,
+              "wilson_lower_95": 0.525883,
+              "avg_abs_delta_points": 9.9779,
+              "avg_abs_ret10m_to_trigger": 0.000847
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 3253,
+              "wins": 2579,
+              "losses": 674,
+              "win_rate": 0.792807,
+              "wilson_lower_95": 0.778537,
+              "avg_abs_delta_points": 34.4958,
+              "avg_abs_ret10m_to_trigger": 0.00041
+            },
+            "0_9bp": {
+              "n": 653,
+              "wins": 534,
+              "losses": 119,
+              "win_rate": 0.817764,
+              "wilson_lower_95": 0.786325,
+              "avg_abs_delta_points": 33.8576,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1373,
+              "wins": 1138,
+              "losses": 235,
+              "win_rate": 0.828842,
+              "wilson_lower_95": 0.808008,
+              "avg_abs_delta_points": 34.4157,
+              "avg_abs_ret10m_to_trigger": 0.000234
+            },
+            "40bp_plus": {
+              "n": 1227,
+              "wins": 907,
+              "losses": 320,
+              "win_rate": 0.739201,
+              "wilson_lower_95": 0.713914,
+              "avg_abs_delta_points": 34.925,
+              "avg_abs_ret10m_to_trigger": 0.000803
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 3990,
+              "wins": 3637,
+              "losses": 353,
+              "win_rate": 0.911529,
+              "wilson_lower_95": 0.902317,
+              "avg_abs_delta_points": 73.4508,
+              "avg_abs_ret10m_to_trigger": 0.000507
+            },
+            "0_9bp": {
+              "n": 622,
+              "wins": 588,
+              "losses": 34,
+              "win_rate": 0.945338,
+              "wilson_lower_95": 0.924586,
+              "avg_abs_delta_points": 71.7604,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1495,
+              "wins": 1385,
+              "losses": 110,
+              "win_rate": 0.926421,
+              "wilson_lower_95": 0.912066,
+              "avg_abs_delta_points": 72.7267,
+              "avg_abs_ret10m_to_trigger": 0.000241
+            },
+            "40bp_plus": {
+              "n": 1873,
+              "wins": 1664,
+              "losses": 209,
+              "win_rate": 0.888414,
+              "wilson_lower_95": 0.873352,
+              "avg_abs_delta_points": 74.59,
+              "avg_abs_ret10m_to_trigger": 0.000871
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7536,
+              "wins": 7360,
+              "losses": 176,
+              "win_rate": 0.976645,
+              "wilson_lower_95": 0.972985,
+              "avg_abs_delta_points": 233.5748,
+              "avg_abs_ret10m_to_trigger": 0.000973
+            },
+            "0_9bp": {
+              "n": 660,
+              "wins": 644,
+              "losses": 16,
+              "win_rate": 0.975758,
+              "wilson_lower_95": 0.960985,
+              "avg_abs_delta_points": 179.8827,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1719,
+              "wins": 1674,
+              "losses": 45,
+              "win_rate": 0.973822,
+              "wilson_lower_95": 0.965152,
+              "avg_abs_delta_points": 189.991,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 5157,
+              "wins": 5042,
+              "losses": 115,
+              "win_rate": 0.9777,
+              "wilson_lower_95": 0.9733,
+              "avg_abs_delta_points": 254.9743,
+              "avg_abs_ret10m_to_trigger": 0.001333
+            }
+          }
+        },
+        "4": {
+          "0_19": {
+            "all_ret10": {
+              "n": 2060,
+              "wins": 1269,
+              "losses": 791,
+              "win_rate": 0.616019,
+              "wilson_lower_95": 0.594819,
+              "avg_abs_delta_points": 9.883,
+              "avg_abs_ret10m_to_trigger": 0.000384
+            },
+            "0_9bp": {
+              "n": 568,
+              "wins": 376,
+              "losses": 192,
+              "win_rate": 0.661972,
+              "wilson_lower_95": 0.622097,
+              "avg_abs_delta_points": 9.8166,
+              "avg_abs_ret10m_to_trigger": 3.8e-05
+            },
+            "10_39bp": {
+              "n": 802,
+              "wins": 506,
+              "losses": 296,
+              "win_rate": 0.630923,
+              "wilson_lower_95": 0.596975,
+              "avg_abs_delta_points": 10.0199,
+              "avg_abs_ret10m_to_trigger": 0.000233
+            },
+            "40bp_plus": {
+              "n": 690,
+              "wins": 387,
+              "losses": 303,
+              "win_rate": 0.56087,
+              "wilson_lower_95": 0.523603,
+              "avg_abs_delta_points": 9.7783,
+              "avg_abs_ret10m_to_trigger": 0.000845
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 3091,
+              "wins": 2453,
+              "losses": 638,
+              "win_rate": 0.793594,
+              "wilson_lower_95": 0.778966,
+              "avg_abs_delta_points": 34.5901,
+              "avg_abs_ret10m_to_trigger": 0.000393
+            },
+            "0_9bp": {
+              "n": 647,
+              "wins": 528,
+              "losses": 119,
+              "win_rate": 0.816074,
+              "wilson_lower_95": 0.784385,
+              "avg_abs_delta_points": 33.944,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1339,
+              "wins": 1111,
+              "losses": 228,
+              "win_rate": 0.829724,
+              "wilson_lower_95": 0.808654,
+              "avg_abs_delta_points": 34.5549,
+              "avg_abs_ret10m_to_trigger": 0.000232
+            },
+            "40bp_plus": {
+              "n": 1105,
+              "wins": 814,
+              "losses": 291,
+              "win_rate": 0.736652,
+              "wilson_lower_95": 0.709894,
+              "avg_abs_delta_points": 35.0109,
+              "avg_abs_ret10m_to_trigger": 0.000794
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 3870,
+              "wins": 3538,
+              "losses": 332,
+              "win_rate": 0.914212,
+              "wilson_lower_95": 0.904973,
+              "avg_abs_delta_points": 73.5306,
+              "avg_abs_ret10m_to_trigger": 0.000483
+            },
+            "0_9bp": {
+              "n": 622,
+              "wins": 588,
+              "losses": 34,
+              "win_rate": 0.945338,
+              "wilson_lower_95": 0.924586,
+              "avg_abs_delta_points": 71.7604,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1491,
+              "wins": 1382,
+              "losses": 109,
+              "win_rate": 0.926895,
+              "wilson_lower_95": 0.912556,
+              "avg_abs_delta_points": 72.7592,
+              "avg_abs_ret10m_to_trigger": 0.000241
+            },
+            "40bp_plus": {
+              "n": 1757,
+              "wins": 1568,
+              "losses": 189,
+              "win_rate": 0.89243,
+              "wilson_lower_95": 0.877077,
+              "avg_abs_delta_points": 74.8119,
+              "avg_abs_ret10m_to_trigger": 0.000842
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7458,
+              "wins": 7288,
+              "losses": 170,
+              "win_rate": 0.977206,
+              "wilson_lower_95": 0.973565,
+              "avg_abs_delta_points": 234.4596,
+              "avg_abs_ret10m_to_trigger": 0.000962
+            },
+            "0_9bp": {
+              "n": 660,
+              "wins": 644,
+              "losses": 16,
+              "win_rate": 0.975758,
+              "wilson_lower_95": 0.960985,
+              "avg_abs_delta_points": 179.8827,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1719,
+              "wins": 1674,
+              "losses": 45,
+              "win_rate": 0.973822,
+              "wilson_lower_95": 0.965152,
+              "avg_abs_delta_points": 189.991,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 5079,
+              "wins": 4970,
+              "losses": 109,
+              "win_rate": 0.978539,
+              "wilson_lower_95": 0.974177,
+              "avg_abs_delta_points": 256.6022,
+              "avg_abs_ret10m_to_trigger": 0.001322
+            }
+          }
+        },
+        "5": {
+          "0_19": {
+            "all_ret10": {
+              "n": 1885,
+              "wins": 1152,
+              "losses": 733,
+              "win_rate": 0.611141,
+              "wilson_lower_95": 0.588928,
+              "avg_abs_delta_points": 9.9402,
+              "avg_abs_ret10m_to_trigger": 0.000385
+            },
+            "0_9bp": {
+              "n": 535,
+              "wins": 347,
+              "losses": 188,
+              "win_rate": 0.648598,
+              "wilson_lower_95": 0.607215,
+              "avg_abs_delta_points": 9.8599,
+              "avg_abs_ret10m_to_trigger": 3.8e-05
+            },
+            "10_39bp": {
+              "n": 721,
+              "wins": 453,
+              "losses": 268,
+              "win_rate": 0.628294,
+              "wilson_lower_95": 0.592426,
+              "avg_abs_delta_points": 10.1642,
+              "avg_abs_ret10m_to_trigger": 0.000234
+            },
+            "40bp_plus": {
+              "n": 629,
+              "wins": 352,
+              "losses": 277,
+              "win_rate": 0.559618,
+              "wilson_lower_95": 0.520576,
+              "avg_abs_delta_points": 9.7516,
+              "avg_abs_ret10m_to_trigger": 0.000854
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 2912,
+              "wins": 2317,
+              "losses": 595,
+              "win_rate": 0.795673,
+              "wilson_lower_95": 0.780643,
+              "avg_abs_delta_points": 34.7065,
+              "avg_abs_ret10m_to_trigger": 0.000388
+            },
+            "0_9bp": {
+              "n": 632,
+              "wins": 516,
+              "losses": 116,
+              "win_rate": 0.816456,
+              "wilson_lower_95": 0.784393,
+              "avg_abs_delta_points": 33.956,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1264,
+              "wins": 1054,
+              "losses": 210,
+              "win_rate": 0.833861,
+              "wilson_lower_95": 0.812336,
+              "avg_abs_delta_points": 34.7092,
+              "avg_abs_ret10m_to_trigger": 0.000231
+            },
+            "40bp_plus": {
+              "n": 1016,
+              "wins": 747,
+              "losses": 269,
+              "win_rate": 0.735236,
+              "wilson_lower_95": 0.707257,
+              "avg_abs_delta_points": 35.1701,
+              "avg_abs_ret10m_to_trigger": 0.000798
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 3706,
+              "wins": 3390,
+              "losses": 316,
+              "win_rate": 0.914733,
+              "wilson_lower_95": 0.905306,
+              "avg_abs_delta_points": 73.6794,
+              "avg_abs_ret10m_to_trigger": 0.000467
+            },
+            "0_9bp": {
+              "n": 616,
+              "wins": 582,
+              "losses": 34,
+              "win_rate": 0.944805,
+              "wilson_lower_95": 0.923861,
+              "avg_abs_delta_points": 71.8967,
+              "avg_abs_ret10m_to_trigger": 4.9e-05
+            },
+            "10_39bp": {
+              "n": 1466,
+              "wins": 1361,
+              "losses": 105,
+              "win_rate": 0.928377,
+              "wilson_lower_95": 0.914027,
+              "avg_abs_delta_points": 72.879,
+              "avg_abs_ret10m_to_trigger": 0.000241
+            },
+            "40bp_plus": {
+              "n": 1624,
+              "wins": 1447,
+              "losses": 177,
+              "win_rate": 0.89101,
+              "wilson_lower_95": 0.87492,
+              "avg_abs_delta_points": 75.0782,
+              "avg_abs_ret10m_to_trigger": 0.000829
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7344,
+              "wins": 7179,
+              "losses": 165,
+              "win_rate": 0.977533,
+              "wilson_lower_95": 0.973885,
+              "avg_abs_delta_points": 235.0609,
+              "avg_abs_ret10m_to_trigger": 0.000946
+            },
+            "0_9bp": {
+              "n": 659,
+              "wins": 643,
+              "losses": 16,
+              "win_rate": 0.975721,
+              "wilson_lower_95": 0.960926,
+              "avg_abs_delta_points": 179.9352,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1714,
+              "wins": 1670,
+              "losses": 44,
+              "win_rate": 0.974329,
+              "wilson_lower_95": 0.965715,
+              "avg_abs_delta_points": 190.1725,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 4971,
+              "wins": 4866,
+              "losses": 105,
+              "win_rate": 0.978877,
+              "wilson_lower_95": 0.974495,
+              "avg_abs_delta_points": 257.8464,
+              "avg_abs_ret10m_to_trigger": 0.001306
+            }
+          }
+        },
+        "6": {
+          "0_19": {
+            "all_ret10": {
+              "n": 1700,
+              "wins": 1034,
+              "losses": 666,
+              "win_rate": 0.608235,
+              "wilson_lower_95": 0.584811,
+              "avg_abs_delta_points": 10.038,
+              "avg_abs_ret10m_to_trigger": 0.000386
+            },
+            "0_9bp": {
+              "n": 485,
+              "wins": 314,
+              "losses": 171,
+              "win_rate": 0.647423,
+              "wilson_lower_95": 0.603894,
+              "avg_abs_delta_points": 10.0156,
+              "avg_abs_ret10m_to_trigger": 3.8e-05
+            },
+            "10_39bp": {
+              "n": 642,
+              "wins": 402,
+              "losses": 240,
+              "win_rate": 0.626168,
+              "wilson_lower_95": 0.588096,
+              "avg_abs_delta_points": 10.2752,
+              "avg_abs_ret10m_to_trigger": 0.000233
+            },
+            "40bp_plus": {
+              "n": 573,
+              "wins": 318,
+              "losses": 255,
+              "win_rate": 0.554974,
+              "wilson_lower_95": 0.51405,
+              "avg_abs_delta_points": 9.7911,
+              "avg_abs_ret10m_to_trigger": 0.000851
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 2702,
+              "wins": 2148,
+              "losses": 554,
+              "win_rate": 0.794967,
+              "wilson_lower_95": 0.77933,
+              "avg_abs_delta_points": 34.7065,
+              "avg_abs_ret10m_to_trigger": 0.000383
+            },
+            "0_9bp": {
+              "n": 599,
+              "wins": 492,
+              "losses": 107,
+              "win_rate": 0.821369,
+              "wilson_lower_95": 0.788675,
+              "avg_abs_delta_points": 34.0142,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1191,
+              "wins": 993,
+              "losses": 198,
+              "win_rate": 0.833753,
+              "wilson_lower_95": 0.811542,
+              "avg_abs_delta_points": 34.8076,
+              "avg_abs_ret10m_to_trigger": 0.000232
+            },
+            "40bp_plus": {
+              "n": 912,
+              "wins": 663,
+              "losses": 249,
+              "win_rate": 0.726974,
+              "wilson_lower_95": 0.697152,
+              "avg_abs_delta_points": 35.0292,
+              "avg_abs_ret10m_to_trigger": 0.000803
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 3532,
+              "wins": 3238,
+              "losses": 294,
+              "win_rate": 0.916761,
+              "wilson_lower_95": 0.907192,
+              "avg_abs_delta_points": 73.7584,
+              "avg_abs_ret10m_to_trigger": 0.000455
+            },
+            "0_9bp": {
+              "n": 602,
+              "wins": 569,
+              "losses": 33,
+              "win_rate": 0.945183,
+              "wilson_lower_95": 0.924016,
+              "avg_abs_delta_points": 71.9598,
+              "avg_abs_ret10m_to_trigger": 4.9e-05
+            },
+            "10_39bp": {
+              "n": 1425,
+              "wins": 1327,
+              "losses": 98,
+              "win_rate": 0.931228,
+              "wilson_lower_95": 0.916896,
+              "avg_abs_delta_points": 73.006,
+              "avg_abs_ret10m_to_trigger": 0.00024
+            },
+            "40bp_plus": {
+              "n": 1505,
+              "wins": 1342,
+              "losses": 163,
+              "win_rate": 0.891694,
+              "wilson_lower_95": 0.874985,
+              "avg_abs_delta_points": 75.1902,
+              "avg_abs_ret10m_to_trigger": 0.000822
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 7145,
+              "wins": 6990,
+              "losses": 155,
+              "win_rate": 0.978307,
+              "wilson_lower_95": 0.974663,
+              "avg_abs_delta_points": 236.401,
+              "avg_abs_ret10m_to_trigger": 0.000932
+            },
+            "0_9bp": {
+              "n": 651,
+              "wins": 636,
+              "losses": 15,
+              "win_rate": 0.976959,
+              "wilson_lower_95": 0.962333,
+              "avg_abs_delta_points": 180.572,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1696,
+              "wins": 1654,
+              "losses": 42,
+              "win_rate": 0.975236,
+              "wilson_lower_95": 0.966696,
+              "avg_abs_delta_points": 190.6783,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 4798,
+              "wins": 4700,
+              "losses": 98,
+              "win_rate": 0.979575,
+              "wilson_lower_95": 0.975172,
+              "avg_abs_delta_points": 260.1381,
+              "avg_abs_ret10m_to_trigger": 0.001293
+            }
+          }
+        },
+        "7": {
+          "0_19": {
+            "all_ret10": {
+              "n": 1541,
+              "wins": 941,
+              "losses": 600,
+              "win_rate": 0.610642,
+              "wilson_lower_95": 0.58605,
+              "avg_abs_delta_points": 10.0602,
+              "avg_abs_ret10m_to_trigger": 0.000387
+            },
+            "0_9bp": {
+              "n": 443,
+              "wins": 286,
+              "losses": 157,
+              "win_rate": 0.645598,
+              "wilson_lower_95": 0.599977,
+              "avg_abs_delta_points": 10.1817,
+              "avg_abs_ret10m_to_trigger": 3.8e-05
+            },
+            "10_39bp": {
+              "n": 569,
+              "wins": 356,
+              "losses": 213,
+              "win_rate": 0.625659,
+              "wilson_lower_95": 0.585176,
+              "avg_abs_delta_points": 10.2107,
+              "avg_abs_ret10m_to_trigger": 0.000231
+            },
+            "40bp_plus": {
+              "n": 529,
+              "wins": 299,
+              "losses": 230,
+              "win_rate": 0.565217,
+              "wilson_lower_95": 0.522652,
+              "avg_abs_delta_points": 9.7967,
+              "avg_abs_ret10m_to_trigger": 0.000847
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 2495,
+              "wins": 1982,
+              "losses": 513,
+              "win_rate": 0.794389,
+              "wilson_lower_95": 0.778083,
+              "avg_abs_delta_points": 34.8194,
+              "avg_abs_ret10m_to_trigger": 0.000377
+            },
+            "0_9bp": {
+              "n": 563,
+              "wins": 462,
+              "losses": 101,
+              "win_rate": 0.820604,
+              "wilson_lower_95": 0.78677,
+              "avg_abs_delta_points": 34.0855,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1108,
+              "wins": 920,
+              "losses": 188,
+              "win_rate": 0.830325,
+              "wilson_lower_95": 0.807091,
+              "avg_abs_delta_points": 34.9788,
+              "avg_abs_ret10m_to_trigger": 0.000232
+            },
+            "40bp_plus": {
+              "n": 824,
+              "wins": 600,
+              "losses": 224,
+              "win_rate": 0.728155,
+              "wilson_lower_95": 0.69677,
+              "avg_abs_delta_points": 35.1067,
+              "avg_abs_ret10m_to_trigger": 0.000801
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 3361,
+              "wins": 3087,
+              "losses": 274,
+              "win_rate": 0.918477,
+              "wilson_lower_95": 0.908741,
+              "avg_abs_delta_points": 73.9247,
+              "avg_abs_ret10m_to_trigger": 0.000445
+            },
+            "0_9bp": {
+              "n": 589,
+              "wins": 556,
+              "losses": 33,
+              "win_rate": 0.943973,
+              "wilson_lower_95": 0.922361,
+              "avg_abs_delta_points": 72.0603,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1379,
+              "wins": 1286,
+              "losses": 93,
+              "win_rate": 0.93256,
+              "wilson_lower_95": 0.918086,
+              "avg_abs_delta_points": 73.1642,
+              "avg_abs_ret10m_to_trigger": 0.00024
+            },
+            "40bp_plus": {
+              "n": 1393,
+              "wins": 1245,
+              "losses": 148,
+              "win_rate": 0.893754,
+              "wilson_lower_95": 0.876475,
+              "avg_abs_delta_points": 75.4659,
+              "avg_abs_ret10m_to_trigger": 0.000816
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 6920,
+              "wins": 6771,
+              "losses": 149,
+              "win_rate": 0.978468,
+              "wilson_lower_95": 0.974773,
+              "avg_abs_delta_points": 237.4528,
+              "avg_abs_ret10m_to_trigger": 0.000912
+            },
+            "0_9bp": {
+              "n": 641,
+              "wins": 626,
+              "losses": 15,
+              "win_rate": 0.976599,
+              "wilson_lower_95": 0.961751,
+              "avg_abs_delta_points": 181.1726,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1672,
+              "wins": 1631,
+              "losses": 41,
+              "win_rate": 0.975478,
+              "wilson_lower_95": 0.966904,
+              "avg_abs_delta_points": 191.2098,
+              "avg_abs_ret10m_to_trigger": 0.000247
+            },
+            "40bp_plus": {
+              "n": 4607,
+              "wins": 4514,
+              "losses": 93,
+              "win_rate": 0.979813,
+              "wilson_lower_95": 0.975334,
+              "avg_abs_delta_points": 262.0662,
+              "avg_abs_ret10m_to_trigger": 0.001273
+            }
+          }
+        },
+        "8": {
+          "0_19": {
+            "all_ret10": {
+              "n": 1377,
+              "wins": 846,
+              "losses": 531,
+              "win_rate": 0.614379,
+              "wilson_lower_95": 0.588386,
+              "avg_abs_delta_points": 10.0837,
+              "avg_abs_ret10m_to_trigger": 0.000392
+            },
+            "0_9bp": {
+              "n": 398,
+              "wins": 258,
+              "losses": 140,
+              "win_rate": 0.648241,
+              "wilson_lower_95": 0.600113,
+              "avg_abs_delta_points": 10.2547,
+              "avg_abs_ret10m_to_trigger": 3.7e-05
+            },
+            "10_39bp": {
+              "n": 501,
+              "wins": 318,
+              "losses": 183,
+              "win_rate": 0.634731,
+              "wilson_lower_95": 0.59169,
+              "avg_abs_delta_points": 10.277,
+              "avg_abs_ret10m_to_trigger": 0.000233
+            },
+            "40bp_plus": {
+              "n": 478,
+              "wins": 270,
+              "losses": 208,
+              "win_rate": 0.564854,
+              "wilson_lower_95": 0.520066,
+              "avg_abs_delta_points": 9.7387,
+              "avg_abs_ret10m_to_trigger": 0.000855
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 2260,
+              "wins": 1807,
+              "losses": 453,
+              "win_rate": 0.799558,
+              "wilson_lower_95": 0.78255,
+              "avg_abs_delta_points": 34.7783,
+              "avg_abs_ret10m_to_trigger": 0.000372
+            },
+            "0_9bp": {
+              "n": 521,
+              "wins": 431,
+              "losses": 90,
+              "win_rate": 0.827255,
+              "wilson_lower_95": 0.79243,
+              "avg_abs_delta_points": 34.283,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 1014,
+              "wins": 846,
+              "losses": 168,
+              "win_rate": 0.83432,
+              "wilson_lower_95": 0.810182,
+              "avg_abs_delta_points": 34.9562,
+              "avg_abs_ret10m_to_trigger": 0.000231
+            },
+            "40bp_plus": {
+              "n": 725,
+              "wins": 530,
+              "losses": 195,
+              "win_rate": 0.731034,
+              "wilson_lower_95": 0.697601,
+              "avg_abs_delta_points": 34.8853,
+              "avg_abs_ret10m_to_trigger": 0.000805
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 3139,
+              "wins": 2894,
+              "losses": 245,
+              "win_rate": 0.92195,
+              "wilson_lower_95": 0.912041,
+              "avg_abs_delta_points": 73.9355,
+              "avg_abs_ret10m_to_trigger": 0.000435
+            },
+            "0_9bp": {
+              "n": 570,
+              "wins": 541,
+              "losses": 29,
+              "win_rate": 0.949123,
+              "wilson_lower_95": 0.927887,
+              "avg_abs_delta_points": 72.1182,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1301,
+              "wins": 1214,
+              "losses": 87,
+              "win_rate": 0.933128,
+              "wilson_lower_95": 0.918239,
+              "avg_abs_delta_points": 73.1243,
+              "avg_abs_ret10m_to_trigger": 0.000238
+            },
+            "40bp_plus": {
+              "n": 1268,
+              "wins": 1139,
+              "losses": 129,
+              "win_rate": 0.898265,
+              "wilson_lower_95": 0.880404,
+              "avg_abs_delta_points": 75.5849,
+              "avg_abs_ret10m_to_trigger": 0.000811
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 6646,
+              "wins": 6506,
+              "losses": 140,
+              "win_rate": 0.978935,
+              "wilson_lower_95": 0.975195,
+              "avg_abs_delta_points": 238.9587,
+              "avg_abs_ret10m_to_trigger": 0.000897
+            },
+            "0_9bp": {
+              "n": 628,
+              "wins": 615,
+              "losses": 13,
+              "win_rate": 0.979299,
+              "wilson_lower_95": 0.964907,
+              "avg_abs_delta_points": 180.2348,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1627,
+              "wins": 1586,
+              "losses": 41,
+              "win_rate": 0.9748,
+              "wilson_lower_95": 0.965993,
+              "avg_abs_delta_points": 191.6808,
+              "avg_abs_ret10m_to_trigger": 0.000247
+            },
+            "40bp_plus": {
+              "n": 4391,
+              "wins": 4305,
+              "losses": 86,
+              "win_rate": 0.980414,
+              "wilson_lower_95": 0.975876,
+              "avg_abs_delta_points": 264.8752,
+              "avg_abs_ret10m_to_trigger": 0.00126
+            }
+          }
+        },
+        "9": {
+          "0_19": {
+            "all_ret10": {
+              "n": 1191,
+              "wins": 738,
+              "losses": 453,
+              "win_rate": 0.619647,
+              "wilson_lower_95": 0.591733,
+              "avg_abs_delta_points": 10.059,
+              "avg_abs_ret10m_to_trigger": 0.000409
+            },
+            "0_9bp": {
+              "n": 336,
+              "wins": 223,
+              "losses": 113,
+              "win_rate": 0.66369,
+              "wilson_lower_95": 0.611575,
+              "avg_abs_delta_points": 10.4004,
+              "avg_abs_ret10m_to_trigger": 3.7e-05
+            },
+            "10_39bp": {
+              "n": 428,
+              "wins": 272,
+              "losses": 156,
+              "win_rate": 0.635514,
+              "wilson_lower_95": 0.588899,
+              "avg_abs_delta_points": 10.0943,
+              "avg_abs_ret10m_to_trigger": 0.000233
+            },
+            "40bp_plus": {
+              "n": 427,
+              "wins": 243,
+              "losses": 184,
+              "win_rate": 0.569087,
+              "wilson_lower_95": 0.521706,
+              "avg_abs_delta_points": 9.7549,
+              "avg_abs_ret10m_to_trigger": 0.000878
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 2015,
+              "wins": 1621,
+              "losses": 394,
+              "win_rate": 0.804467,
+              "wilson_lower_95": 0.786577,
+              "avg_abs_delta_points": 34.8968,
+              "avg_abs_ret10m_to_trigger": 0.00037
+            },
+            "0_9bp": {
+              "n": 464,
+              "wins": 380,
+              "losses": 84,
+              "win_rate": 0.818966,
+              "wilson_lower_95": 0.781357,
+              "avg_abs_delta_points": 34.2614,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 919,
+              "wins": 770,
+              "losses": 149,
+              "win_rate": 0.837867,
+              "wilson_lower_95": 0.812639,
+              "avg_abs_delta_points": 35.0617,
+              "avg_abs_ret10m_to_trigger": 0.000231
+            },
+            "40bp_plus": {
+              "n": 632,
+              "wins": 471,
+              "losses": 161,
+              "win_rate": 0.745253,
+              "wilson_lower_95": 0.709871,
+              "avg_abs_delta_points": 35.1236,
+              "avg_abs_ret10m_to_trigger": 0.00081
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 2901,
+              "wins": 2674,
+              "losses": 227,
+              "win_rate": 0.921751,
+              "wilson_lower_95": 0.911411,
+              "avg_abs_delta_points": 74.0268,
+              "avg_abs_ret10m_to_trigger": 0.000427
+            },
+            "0_9bp": {
+              "n": 534,
+              "wins": 506,
+              "losses": 28,
+              "win_rate": 0.947566,
+              "wilson_lower_95": 0.925261,
+              "avg_abs_delta_points": 72.3404,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 1215,
+              "wins": 1138,
+              "losses": 77,
+              "win_rate": 0.936626,
+              "wilson_lower_95": 0.921502,
+              "avg_abs_delta_points": 73.1911,
+              "avg_abs_ret10m_to_trigger": 0.000239
+            },
+            "40bp_plus": {
+              "n": 1152,
+              "wins": 1030,
+              "losses": 122,
+              "win_rate": 0.894097,
+              "wilson_lower_95": 0.874999,
+              "avg_abs_delta_points": 75.69,
+              "avg_abs_ret10m_to_trigger": 0.000802
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 6289,
+              "wins": 6161,
+              "losses": 128,
+              "win_rate": 0.979647,
+              "wilson_lower_95": 0.975853,
+              "avg_abs_delta_points": 241.5975,
+              "avg_abs_ret10m_to_trigger": 0.000887
+            },
+            "0_9bp": {
+              "n": 609,
+              "wins": 596,
+              "losses": 13,
+              "win_rate": 0.978654,
+              "wilson_lower_95": 0.963823,
+              "avg_abs_delta_points": 180.8485,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1569,
+              "wins": 1533,
+              "losses": 36,
+              "win_rate": 0.977055,
+              "wilson_lower_95": 0.968399,
+              "avg_abs_delta_points": 193.0174,
+              "avg_abs_ret10m_to_trigger": 0.000247
+            },
+            "40bp_plus": {
+              "n": 4111,
+              "wins": 4032,
+              "losses": 79,
+              "win_rate": 0.980783,
+              "wilson_lower_95": 0.976116,
+              "avg_abs_delta_points": 269.1379,
+              "avg_abs_ret10m_to_trigger": 0.001256
+            }
+          }
+        },
+        "10": {
+          "0_19": {
+            "all_ret10": {
+              "n": 1004,
+              "wins": 630,
+              "losses": 374,
+              "win_rate": 0.62749,
+              "wilson_lower_95": 0.597151,
+              "avg_abs_delta_points": 10.228,
+              "avg_abs_ret10m_to_trigger": 0.000408
+            },
+            "0_9bp": {
+              "n": 285,
+              "wins": 190,
+              "losses": 95,
+              "win_rate": 0.666667,
+              "wilson_lower_95": 0.61004,
+              "avg_abs_delta_points": 10.5038,
+              "avg_abs_ret10m_to_trigger": 3.7e-05
+            },
+            "10_39bp": {
+              "n": 354,
+              "wins": 230,
+              "losses": 124,
+              "win_rate": 0.649718,
+              "wilson_lower_95": 0.598655,
+              "avg_abs_delta_points": 10.4598,
+              "avg_abs_ret10m_to_trigger": 0.000234
+            },
+            "40bp_plus": {
+              "n": 365,
+              "wins": 210,
+              "losses": 155,
+              "win_rate": 0.575342,
+              "wilson_lower_95": 0.524107,
+              "avg_abs_delta_points": 9.7879,
+              "avg_abs_ret10m_to_trigger": 0.000868
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 1751,
+              "wins": 1421,
+              "losses": 330,
+              "win_rate": 0.811536,
+              "wilson_lower_95": 0.792544,
+              "avg_abs_delta_points": 34.9611,
+              "avg_abs_ret10m_to_trigger": 0.000363
+            },
+            "0_9bp": {
+              "n": 423,
+              "wins": 347,
+              "losses": 76,
+              "win_rate": 0.820331,
+              "wilson_lower_95": 0.780913,
+              "avg_abs_delta_points": 34.1834,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 791,
+              "wins": 669,
+              "losses": 122,
+              "win_rate": 0.845765,
+              "wilson_lower_95": 0.818929,
+              "avg_abs_delta_points": 35.1864,
+              "avg_abs_ret10m_to_trigger": 0.000229
+            },
+            "40bp_plus": {
+              "n": 537,
+              "wins": 405,
+              "losses": 132,
+              "win_rate": 0.75419,
+              "wilson_lower_95": 0.716052,
+              "avg_abs_delta_points": 35.2418,
+              "avg_abs_ret10m_to_trigger": 0.000813
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 2599,
+              "wins": 2401,
+              "losses": 198,
+              "win_rate": 0.923817,
+              "wilson_lower_95": 0.91298,
+              "avg_abs_delta_points": 74.2256,
+              "avg_abs_ret10m_to_trigger": 0.000421
+            },
+            "0_9bp": {
+              "n": 483,
+              "wins": 457,
+              "losses": 26,
+              "win_rate": 0.94617,
+              "wilson_lower_95": 0.922295,
+              "avg_abs_delta_points": 72.4095,
+              "avg_abs_ret10m_to_trigger": 4.7e-05
+            },
+            "10_39bp": {
+              "n": 1103,
+              "wins": 1036,
+              "losses": 67,
+              "win_rate": 0.939257,
+              "wilson_lower_95": 0.923578,
+              "avg_abs_delta_points": 73.3835,
+              "avg_abs_ret10m_to_trigger": 0.000238
+            },
+            "40bp_plus": {
+              "n": 1013,
+              "wins": 908,
+              "losses": 105,
+              "win_rate": 0.896347,
+              "wilson_lower_95": 0.876055,
+              "avg_abs_delta_points": 76.0084,
+              "avg_abs_ret10m_to_trigger": 0.000799
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 5860,
+              "wins": 5741,
+              "losses": 119,
+              "win_rate": 0.979693,
+              "wilson_lower_95": 0.975755,
+              "avg_abs_delta_points": 243.2374,
+              "avg_abs_ret10m_to_trigger": 0.00087
+            },
+            "0_9bp": {
+              "n": 578,
+              "wins": 567,
+              "losses": 11,
+              "win_rate": 0.980969,
+              "wilson_lower_95": 0.966246,
+              "avg_abs_delta_points": 180.5288,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1481,
+              "wins": 1447,
+              "losses": 34,
+              "win_rate": 0.977043,
+              "wilson_lower_95": 0.968091,
+              "avg_abs_delta_points": 194.5969,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 3801,
+              "wins": 3727,
+              "losses": 74,
+              "win_rate": 0.980531,
+              "wilson_lower_95": 0.975629,
+              "avg_abs_delta_points": 271.7251,
+              "avg_abs_ret10m_to_trigger": 0.001237
+            }
+          }
+        },
+        "11": {
+          "0_19": {
+            "all_ret10": {
+              "n": 775,
+              "wins": 480,
+              "losses": 295,
+              "win_rate": 0.619355,
+              "wilson_lower_95": 0.58466,
+              "avg_abs_delta_points": 10.1604,
+              "avg_abs_ret10m_to_trigger": 0.000436
+            },
+            "0_9bp": {
+              "n": 208,
+              "wins": 140,
+              "losses": 68,
+              "win_rate": 0.673077,
+              "wilson_lower_95": 0.606691,
+              "avg_abs_delta_points": 10.5671,
+              "avg_abs_ret10m_to_trigger": 3.5e-05
+            },
+            "10_39bp": {
+              "n": 261,
+              "wins": 168,
+              "losses": 93,
+              "win_rate": 0.643678,
+              "wilson_lower_95": 0.583877,
+              "avg_abs_delta_points": 10.4539,
+              "avg_abs_ret10m_to_trigger": 0.000238
+            },
+            "40bp_plus": {
+              "n": 306,
+              "wins": 172,
+              "losses": 134,
+              "win_rate": 0.562092,
+              "wilson_lower_95": 0.506073,
+              "avg_abs_delta_points": 9.6335,
+              "avg_abs_ret10m_to_trigger": 0.000876
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 1471,
+              "wins": 1198,
+              "losses": 273,
+              "win_rate": 0.814412,
+              "wilson_lower_95": 0.793734,
+              "avg_abs_delta_points": 34.9062,
+              "avg_abs_ret10m_to_trigger": 0.000362
+            },
+            "0_9bp": {
+              "n": 366,
+              "wins": 300,
+              "losses": 66,
+              "win_rate": 0.819672,
+              "wilson_lower_95": 0.777028,
+              "avg_abs_delta_points": 34.1716,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 667,
+              "wins": 561,
+              "losses": 106,
+              "win_rate": 0.841079,
+              "wilson_lower_95": 0.811391,
+              "avg_abs_delta_points": 35.1426,
+              "avg_abs_ret10m_to_trigger": 0.000226
+            },
+            "40bp_plus": {
+              "n": 438,
+              "wins": 337,
+              "losses": 101,
+              "win_rate": 0.769406,
+              "wilson_lower_95": 0.727719,
+              "avg_abs_delta_points": 35.1599,
+              "avg_abs_ret10m_to_trigger": 0.000835
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 2255,
+              "wins": 2081,
+              "losses": 174,
+              "win_rate": 0.922838,
+              "wilson_lower_95": 0.911091,
+              "avg_abs_delta_points": 74.3288,
+              "avg_abs_ret10m_to_trigger": 0.00042
+            },
+            "0_9bp": {
+              "n": 423,
+              "wins": 400,
+              "losses": 23,
+              "win_rate": 0.945626,
+              "wilson_lower_95": 0.919733,
+              "avg_abs_delta_points": 72.5068,
+              "avg_abs_ret10m_to_trigger": 4.7e-05
+            },
+            "10_39bp": {
+              "n": 966,
+              "wins": 907,
+              "losses": 59,
+              "win_rate": 0.938923,
+              "wilson_lower_95": 0.922013,
+              "avg_abs_delta_points": 73.3674,
+              "avg_abs_ret10m_to_trigger": 0.000238
+            },
+            "40bp_plus": {
+              "n": 866,
+              "wins": 774,
+              "losses": 92,
+              "win_rate": 0.893764,
+              "wilson_lower_95": 0.871474,
+              "avg_abs_delta_points": 76.2911,
+              "avg_abs_ret10m_to_trigger": 0.000805
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 5268,
+              "wins": 5170,
+              "losses": 98,
+              "win_rate": 0.981397,
+              "wilson_lower_95": 0.977382,
+              "avg_abs_delta_points": 246.6807,
+              "avg_abs_ret10m_to_trigger": 0.000866
+            },
+            "0_9bp": {
+              "n": 523,
+              "wins": 516,
+              "losses": 7,
+              "win_rate": 0.986616,
+              "wilson_lower_95": 0.972633,
+              "avg_abs_delta_points": 182.4073,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1343,
+              "wins": 1314,
+              "losses": 29,
+              "win_rate": 0.978407,
+              "wilson_lower_95": 0.96916,
+              "avg_abs_delta_points": 195.658,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 3402,
+              "wins": 3340,
+              "losses": 62,
+              "win_rate": 0.981775,
+              "wilson_lower_95": 0.976707,
+              "avg_abs_delta_points": 276.7037,
+              "avg_abs_ret10m_to_trigger": 0.001235
+            }
+          }
+        },
+        "12": {
+          "0_19": {
+            "all_ret10": {
+              "n": 573,
+              "wins": 354,
+              "losses": 219,
+              "win_rate": 0.617801,
+              "wilson_lower_95": 0.577354,
+              "avg_abs_delta_points": 10.2221,
+              "avg_abs_ret10m_to_trigger": 0.000463
+            },
+            "0_9bp": {
+              "n": 147,
+              "wins": 102,
+              "losses": 45,
+              "win_rate": 0.693878,
+              "wilson_lower_95": 0.615224,
+              "avg_abs_delta_points": 10.7429,
+              "avg_abs_ret10m_to_trigger": 3.4e-05
+            },
+            "10_39bp": {
+              "n": 181,
+              "wins": 114,
+              "losses": 67,
+              "win_rate": 0.629834,
+              "wilson_lower_95": 0.557474,
+              "avg_abs_delta_points": 10.2761,
+              "avg_abs_ret10m_to_trigger": 0.00024
+            },
+            "40bp_plus": {
+              "n": 245,
+              "wins": 138,
+              "losses": 107,
+              "win_rate": 0.563265,
+              "wilson_lower_95": 0.500655,
+              "avg_abs_delta_points": 9.8698,
+              "avg_abs_ret10m_to_trigger": 0.000884
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 1116,
+              "wins": 912,
+              "losses": 204,
+              "win_rate": 0.817204,
+              "wilson_lower_95": 0.793453,
+              "avg_abs_delta_points": 34.9891,
+              "avg_abs_ret10m_to_trigger": 0.000368
+            },
+            "0_9bp": {
+              "n": 284,
+              "wins": 235,
+              "losses": 49,
+              "win_rate": 0.827465,
+              "wilson_lower_95": 0.779225,
+              "avg_abs_delta_points": 34.3843,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 503,
+              "wins": 428,
+              "losses": 75,
+              "win_rate": 0.850895,
+              "wilson_lower_95": 0.817111,
+              "avg_abs_delta_points": 35.2773,
+              "avg_abs_ret10m_to_trigger": 0.000227
+            },
+            "40bp_plus": {
+              "n": 329,
+              "wins": 249,
+              "losses": 80,
+              "win_rate": 0.756839,
+              "wilson_lower_95": 0.707691,
+              "avg_abs_delta_points": 35.0706,
+              "avg_abs_ret10m_to_trigger": 0.000861
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 1817,
+              "wins": 1688,
+              "losses": 129,
+              "win_rate": 0.929004,
+              "wilson_lower_95": 0.916268,
+              "avg_abs_delta_points": 74.562,
+              "avg_abs_ret10m_to_trigger": 0.000408
+            },
+            "0_9bp": {
+              "n": 357,
+              "wins": 338,
+              "losses": 19,
+              "win_rate": 0.946779,
+              "wilson_lower_95": 0.918377,
+              "avg_abs_delta_points": 72.4671,
+              "avg_abs_ret10m_to_trigger": 4.8e-05
+            },
+            "10_39bp": {
+              "n": 790,
+              "wins": 744,
+              "losses": 46,
+              "win_rate": 0.941772,
+              "wilson_lower_95": 0.923204,
+              "avg_abs_delta_points": 73.8759,
+              "avg_abs_ret10m_to_trigger": 0.000237
+            },
+            "40bp_plus": {
+              "n": 670,
+              "wins": 606,
+              "losses": 64,
+              "win_rate": 0.904478,
+              "wilson_lower_95": 0.879859,
+              "avg_abs_delta_points": 76.4873,
+              "avg_abs_ret10m_to_trigger": 0.000802
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 4500,
+              "wins": 4424,
+              "losses": 76,
+              "win_rate": 0.983111,
+              "wilson_lower_95": 0.978913,
+              "avg_abs_delta_points": 250.3248,
+              "avg_abs_ret10m_to_trigger": 0.000858
+            },
+            "0_9bp": {
+              "n": 461,
+              "wins": 457,
+              "losses": 4,
+              "win_rate": 0.991323,
+              "wilson_lower_95": 0.977905,
+              "avg_abs_delta_points": 184.3617,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 1175,
+              "wins": 1152,
+              "losses": 23,
+              "win_rate": 0.980426,
+              "wilson_lower_95": 0.970798,
+              "avg_abs_delta_points": 198.6757,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 2864,
+              "wins": 2815,
+              "losses": 49,
+              "win_rate": 0.982891,
+              "wilson_lower_95": 0.977454,
+              "avg_abs_delta_points": 282.1324,
+              "avg_abs_ret10m_to_trigger": 0.001239
+            }
+          }
+        },
+        "13": {
+          "0_19": {
+            "all_ret10": {
+              "n": 332,
+              "wins": 205,
+              "losses": 127,
+              "win_rate": 0.61747,
+              "wilson_lower_95": 0.56413,
+              "avg_abs_delta_points": 10.241,
+              "avg_abs_ret10m_to_trigger": 0.000502
+            },
+            "0_9bp": {
+              "n": 80,
+              "wins": 57,
+              "losses": 23,
+              "win_rate": 0.7125,
+              "wilson_lower_95": 0.605394,
+              "avg_abs_delta_points": 10.9073,
+              "avg_abs_ret10m_to_trigger": 3.4e-05
+            },
+            "10_39bp": {
+              "n": 103,
+              "wins": 65,
+              "losses": 38,
+              "win_rate": 0.631068,
+              "wilson_lower_95": 0.534739,
+              "avg_abs_delta_points": 10.2615,
+              "avg_abs_ret10m_to_trigger": 0.000248
+            },
+            "40bp_plus": {
+              "n": 149,
+              "wins": 83,
+              "losses": 66,
+              "win_rate": 0.557047,
+              "wilson_lower_95": 0.476848,
+              "avg_abs_delta_points": 9.8691,
+              "avg_abs_ret10m_to_trigger": 0.000928
+            }
+          },
+          "20_49": {
+            "all_ret10": {
+              "n": 715,
+              "wins": 594,
+              "losses": 121,
+              "win_rate": 0.830769,
+              "wilson_lower_95": 0.801534,
+              "avg_abs_delta_points": 35.2134,
+              "avg_abs_ret10m_to_trigger": 0.00037
+            },
+            "0_9bp": {
+              "n": 183,
+              "wins": 155,
+              "losses": 28,
+              "win_rate": 0.846995,
+              "wilson_lower_95": 0.78775,
+              "avg_abs_delta_points": 34.767,
+              "avg_abs_ret10m_to_trigger": 4.4e-05
+            },
+            "10_39bp": {
+              "n": 327,
+              "wins": 281,
+              "losses": 46,
+              "win_rate": 0.859327,
+              "wilson_lower_95": 0.817458,
+              "avg_abs_delta_points": 35.3385,
+              "avg_abs_ret10m_to_trigger": 0.00023
+            },
+            "40bp_plus": {
+              "n": 205,
+              "wins": 158,
+              "losses": 47,
+              "win_rate": 0.770732,
+              "wilson_lower_95": 0.708522,
+              "avg_abs_delta_points": 35.4123,
+              "avg_abs_ret10m_to_trigger": 0.000885
+            }
+          },
+          "50_99": {
+            "all_ret10": {
+              "n": 1217,
+              "wins": 1138,
+              "losses": 79,
+              "win_rate": 0.935086,
+              "wilson_lower_95": 0.919829,
+              "avg_abs_delta_points": 74.8021,
+              "avg_abs_ret10m_to_trigger": 0.000394
+            },
+            "0_9bp": {
+              "n": 249,
+              "wins": 234,
+              "losses": 15,
+              "win_rate": 0.939759,
+              "wilson_lower_95": 0.902998,
+              "avg_abs_delta_points": 72.2675,
+              "avg_abs_ret10m_to_trigger": 4.7e-05
+            },
+            "10_39bp": {
+              "n": 543,
+              "wins": 513,
+              "losses": 30,
+              "win_rate": 0.944751,
+              "wilson_lower_95": 0.922225,
+              "avg_abs_delta_points": 74.4066,
+              "avg_abs_ret10m_to_trigger": 0.000235
+            },
+            "40bp_plus": {
+              "n": 425,
+              "wins": 391,
+              "losses": 34,
+              "win_rate": 0.92,
+              "wilson_lower_95": 0.890286,
+              "avg_abs_delta_points": 76.7923,
+              "avg_abs_ret10m_to_trigger": 0.000799
+            }
+          },
+          "100_plus": {
+            "all_ret10": {
+              "n": 3291,
+              "wins": 3237,
+              "losses": 54,
+              "win_rate": 0.983592,
+              "wilson_lower_95": 0.978653,
+              "avg_abs_delta_points": 256.3632,
+              "avg_abs_ret10m_to_trigger": 0.00084
+            },
+            "0_9bp": {
+              "n": 359,
+              "wins": 355,
+              "losses": 4,
+              "win_rate": 0.988858,
+              "wilson_lower_95": 0.971705,
+              "avg_abs_delta_points": 184.5514,
+              "avg_abs_ret10m_to_trigger": 5e-05
+            },
+            "10_39bp": {
+              "n": 887,
+              "wins": 867,
+              "losses": 20,
+              "win_rate": 0.977452,
+              "wilson_lower_95": 0.965429,
+              "avg_abs_delta_points": 202.6945,
+              "avg_abs_ret10m_to_trigger": 0.000247
+            },
+            "40bp_plus": {
+              "n": 2045,
+              "wins": 2015,
+              "losses": 30,
+              "win_rate": 0.98533,
+              "wilson_lower_95": 0.979135,
+              "avg_abs_delta_points": 292.2481,
+              "avg_abs_ret10m_to_trigger": 0.001236
+            }
+          }
+        }
+      }
+    },
+    "fallback": {
+      "YES": {
+        "mins_at_least_0": {
+          "n": 17349,
+          "wins": 15217,
+          "losses": 2132,
+          "win_rate": 0.877111,
+          "wilson_lower_95": 0.872142,
+          "avg_abs_delta_points": 124.305,
+          "avg_abs_ret10m_to_trigger": 0.000682
+        },
+        "mins_at_least_1": {
+          "n": 17349,
+          "wins": 15217,
+          "losses": 2132,
+          "win_rate": 0.877111,
+          "wilson_lower_95": 0.872142,
+          "avg_abs_delta_points": 124.305,
+          "avg_abs_ret10m_to_trigger": 0.000682
+        },
+        "mins_at_least_2": {
+          "n": 17072,
+          "wins": 15029,
+          "losses": 2043,
+          "win_rate": 0.88033,
+          "wilson_lower_95": 0.875376,
+          "avg_abs_delta_points": 125.882,
+          "avg_abs_ret10m_to_trigger": 0.000676
+        },
+        "mins_at_least_3": {
+          "n": 16680,
+          "wins": 14737,
+          "losses": 1943,
+          "win_rate": 0.883513,
+          "wilson_lower_95": 0.878556,
+          "avg_abs_delta_points": 127.8979,
+          "avg_abs_ret10m_to_trigger": 0.000667
+        },
+        "mins_at_least_4": {
+          "n": 16154,
+          "wins": 14327,
+          "losses": 1827,
+          "win_rate": 0.886901,
+          "wilson_lower_95": 0.881925,
+          "avg_abs_delta_points": 130.3006,
+          "avg_abs_ret10m_to_trigger": 0.000656
+        },
+        "mins_at_least_5": {
+          "n": 15503,
+          "wins": 13784,
+          "losses": 1719,
+          "win_rate": 0.889118,
+          "wilson_lower_95": 0.884079,
+          "avg_abs_delta_points": 133.2675,
+          "avg_abs_ret10m_to_trigger": 0.00065
+        },
+        "mins_at_least_6": {
+          "n": 14802,
+          "wins": 13211,
+          "losses": 1591,
+          "win_rate": 0.892515,
+          "wilson_lower_95": 0.887423,
+          "avg_abs_delta_points": 136.1156,
+          "avg_abs_ret10m_to_trigger": 0.000645
+        },
+        "mins_at_least_7": {
+          "n": 14062,
+          "wins": 12611,
+          "losses": 1451,
+          "win_rate": 0.896814,
+          "wilson_lower_95": 0.891677,
+          "avg_abs_delta_points": 139.1521,
+          "avg_abs_ret10m_to_trigger": 0.000643
+        },
+        "mins_at_least_8": {
+          "n": 13246,
+          "wins": 11935,
+          "losses": 1311,
+          "win_rate": 0.901027,
+          "wilson_lower_95": 0.895824,
+          "avg_abs_delta_points": 142.0473,
+          "avg_abs_ret10m_to_trigger": 0.000638
+        },
+        "mins_at_least_9": {
+          "n": 12273,
+          "wins": 11114,
+          "losses": 1159,
+          "win_rate": 0.905565,
+          "wilson_lower_95": 0.900264,
+          "avg_abs_delta_points": 145.9296,
+          "avg_abs_ret10m_to_trigger": 0.000638
+        },
+        "mins_at_least_10": {
+          "n": 11217,
+          "wins": 10220,
+          "losses": 997,
+          "win_rate": 0.911117,
+          "wilson_lower_95": 0.905709,
+          "avg_abs_delta_points": 150.2452,
+          "avg_abs_ret10m_to_trigger": 0.000639
+        },
+        "mins_at_least_11": {
+          "n": 9780,
+          "wins": 8971,
+          "losses": 809,
+          "win_rate": 0.91728,
+          "wilson_lower_95": 0.911656,
+          "avg_abs_delta_points": 155.1643,
+          "avg_abs_ret10m_to_trigger": 0.000636
+        },
+        "mins_at_least_12": {
+          "n": 8021,
+          "wins": 7425,
+          "losses": 596,
+          "win_rate": 0.925695,
+          "wilson_lower_95": 0.919749,
+          "avg_abs_delta_points": 161.9588,
+          "avg_abs_ret10m_to_trigger": 0.000648
+        },
+        "mins_at_least_13": {
+          "n": 5552,
+          "wins": 5200,
+          "losses": 352,
+          "win_rate": 0.936599,
+          "wilson_lower_95": 0.929883,
+          "avg_abs_delta_points": 170.3193,
+          "avg_abs_ret10m_to_trigger": 0.000648
+        }
+      },
+      "NO": {
+        "mins_at_least_0": {
+          "n": 17670,
+          "wins": 15404,
+          "losses": 2266,
+          "win_rate": 0.87176,
+          "wilson_lower_95": 0.866749,
+          "avg_abs_delta_points": 125.1632,
+          "avg_abs_ret10m_to_trigger": 0.000695
+        },
+        "mins_at_least_1": {
+          "n": 17670,
+          "wins": 15404,
+          "losses": 2266,
+          "win_rate": 0.87176,
+          "wilson_lower_95": 0.866749,
+          "avg_abs_delta_points": 125.1632,
+          "avg_abs_ret10m_to_trigger": 0.000695
+        },
+        "mins_at_least_2": {
+          "n": 17392,
+          "wins": 15224,
+          "losses": 2168,
+          "win_rate": 0.875345,
+          "wilson_lower_95": 0.870353,
+          "avg_abs_delta_points": 126.7297,
+          "avg_abs_ret10m_to_trigger": 0.000689
+        },
+        "mins_at_least_3": {
+          "n": 17021,
+          "wins": 14962,
+          "losses": 2059,
+          "win_rate": 0.879032,
+          "wilson_lower_95": 0.874047,
+          "avg_abs_delta_points": 128.5298,
+          "avg_abs_ret10m_to_trigger": 0.00068
+        },
+        "mins_at_least_4": {
+          "n": 16479,
+          "wins": 14548,
+          "losses": 1931,
+          "win_rate": 0.882821,
+          "wilson_lower_95": 0.87782,
+          "avg_abs_delta_points": 131.1026,
+          "avg_abs_ret10m_to_trigger": 0.00067
+        },
+        "mins_at_least_5": {
+          "n": 15847,
+          "wins": 14038,
+          "losses": 1809,
+          "win_rate": 0.885846,
+          "wilson_lower_95": 0.880801,
+          "avg_abs_delta_points": 133.7254,
+          "avg_abs_ret10m_to_trigger": 0.000665
+        },
+        "mins_at_least_6": {
+          "n": 15079,
+          "wins": 13410,
+          "losses": 1669,
+          "win_rate": 0.889316,
+          "wilson_lower_95": 0.884209,
+          "avg_abs_delta_points": 136.6431,
+          "avg_abs_ret10m_to_trigger": 0.00066
+        },
+        "mins_at_least_7": {
+          "n": 14317,
+          "wins": 12781,
+          "losses": 1536,
+          "win_rate": 0.892715,
+          "wilson_lower_95": 0.88754,
+          "avg_abs_delta_points": 139.2758,
+          "avg_abs_ret10m_to_trigger": 0.000653
+        },
+        "mins_at_least_8": {
+          "n": 13422,
+          "wins": 12053,
+          "losses": 1369,
+          "win_rate": 0.898003,
+          "wilson_lower_95": 0.892769,
+          "avg_abs_delta_points": 142.5039,
+          "avg_abs_ret10m_to_trigger": 0.000649
+        },
+        "mins_at_least_9": {
+          "n": 12396,
+          "wins": 11194,
+          "losses": 1202,
+          "win_rate": 0.903033,
+          "wilson_lower_95": 0.897698,
+          "avg_abs_delta_points": 146.5357,
+          "avg_abs_ret10m_to_trigger": 0.000649
+        },
+        "mins_at_least_10": {
+          "n": 11214,
+          "wins": 10193,
+          "losses": 1021,
+          "win_rate": 0.908953,
+          "wilson_lower_95": 0.903488,
+          "avg_abs_delta_points": 150.6839,
+          "avg_abs_ret10m_to_trigger": 0.000646
+        },
+        "mins_at_least_11": {
+          "n": 9769,
+          "wins": 8929,
+          "losses": 840,
+          "win_rate": 0.914014,
+          "wilson_lower_95": 0.90829,
+          "avg_abs_delta_points": 156.2439,
+          "avg_abs_ret10m_to_trigger": 0.000653
+        },
+        "mins_at_least_12": {
+          "n": 8006,
+          "wins": 7378,
+          "losses": 628,
+          "win_rate": 0.921559,
+          "wilson_lower_95": 0.915465,
+          "avg_abs_delta_points": 163.2333,
+          "avg_abs_ret10m_to_trigger": 0.000659
+        },
+        "mins_at_least_13": {
+          "n": 5555,
+          "wins": 5174,
+          "losses": 381,
+          "win_rate": 0.931413,
+          "wilson_lower_95": 0.924464,
+          "avg_abs_delta_points": 173.4119,
+          "avg_abs_ret10m_to_trigger": 0.000662
+        }
+      }
+    },
+    "quality": {
+      "all_ret10": {
+        "bucket_count": 112,
+        "min_n": 325,
+        "median_n": 2922.0,
+        "mean_n": 3400.87,
+        "p25_n": 1826.75,
+        "p75_n": 4114.0
+      },
+      "ret_bucket": {
+        "bucket_count": 336,
+        "min_n": 71,
+        "median_n": 686.0,
+        "mean_n": 1133.62,
+        "p25_n": 529.75,
+        "p75_n": 1386.0
+      }
+    }
+  }
+}
