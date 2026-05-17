@@ -63,24 +63,18 @@ test("5m trade alert text includes executed order details", () => {
 test("outcome summary text reports today win loss totals", () => {
   const text = build5mOutcomeSummaryText({
     summary: {
-      wins: 2,
-      losses: 1,
-      unresolved: 3,
-      profitUsd: 1.25,
-      lossUsd: 4.1,
-      realizedPnlUsd: -2.85,
+      remainingBankrollUsd: 14.55,
+      stakeUsd: 18.9,
       unresolvedStakeUsd: 12.6,
-      totalStakeUsd: 18.9,
-      winRate: 2 / 3,
+      totalRealizedPnlUsd: -2.85,
+      roi: -2.85 / 18.9,
     },
-    settled: [
-      { marketSlug: "m1", side: "YES", outcomeStatus: "win" },
-    ],
   });
-  assert.match(text, /realized_pnl_usd: -2.850/);
-  assert.match(text, /profit_usd: 1.250/);
-  assert.match(text, /loss_usd: 4.100/);
-  assert.match(text, /settled: m1 YES -> win/);
+  assert.match(text, /remaining_bankroll_usd: 14.550/);
+  assert.match(text, /stake_usd: 18.900/);
+  assert.match(text, /unresolved_stake_usd: 12.600/);
+  assert.match(text, /total_realized_pnl_usd: -2.850/);
+  assert.match(text, /roi: -15.08%/);
 });
 
 test("summarize5mOutcomes uses money-based pnl", () => {
@@ -98,7 +92,9 @@ test("summarize5mOutcomes uses money-based pnl", () => {
     profitUsd: 0.8,
     lossUsd: 4.05,
     realizedPnlUsd: -3.25,
+    totalRealizedPnlUsd: -3.25,
     unresolvedStakeUsd: 8.9,
+    stakeUsd: 17.15,
     totalStakeUsd: 17.15,
     winRate: 0.5,
   });
@@ -198,8 +194,12 @@ test("runCheck5m assumes a successful paper fill when auto buy is disabled", asy
           profitUsd: 0.8,
           lossUsd: 0,
           realizedPnlUsd: 0.8,
+          totalRealizedPnlUsd: 0.8,
           unresolvedStakeUsd: 0,
+          stakeUsd: 4.2,
           totalStakeUsd: 4.2,
+          remainingBankrollUsd: 30.8,
+          roi: 0.8 / 4.2,
           winRate: 1,
         },
       }),
@@ -223,6 +223,7 @@ test("runCheck5m assumes a successful paper fill when auto buy is disabled", asy
   assert.equal(result.actions[0].assumedFill, true);
   assert.equal(result.outcomeSummary.wins, 1);
   assert.equal(result.outcomeSummary.realizedPnlUsd, 0.8);
+  assert.equal(result.outcomeSummary.remainingBankrollUsd, 30.8);
 });
 
 test("runCheck5m settles previous trades after accepted buy", async () => {
@@ -279,8 +280,12 @@ test("runCheck5m settles previous trades after accepted buy", async () => {
           profitUsd: 0.8,
           lossUsd: 0,
           realizedPnlUsd: 0.8,
+          totalRealizedPnlUsd: 0.8,
           unresolvedStakeUsd: 0,
+          stakeUsd: 4.2,
           totalStakeUsd: 4.2,
+          remainingBankrollUsd: 30.8,
+          roi: 0.8 / 4.2,
           winRate: 1,
         },
       }),
@@ -293,5 +298,6 @@ test("runCheck5m settles previous trades after accepted buy", async () => {
   assert.equal(result.actions[0].orderId, "ord-1");
   assert.equal(result.outcomeSummary.wins, 1);
   assert.equal(result.outcomeSummary.realizedPnlUsd, 0.8);
+  assert.equal(result.outcomeSummary.remainingBankrollUsd, 30.8);
   assert.equal(result.outcomeSummary.settled.length, 1);
 });

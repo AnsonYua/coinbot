@@ -36,9 +36,11 @@ test("config exposes AUTO_BUY_5M_ENABLED and 5m telegram env", () => {
   process.env.TELEGRAM_ACTION_5M_BOT_TOKEN = "act5";
   process.env.TELEGRAM_ACTION_5M_CHAT_ID = "400";
   process.env.AUTO_BUY_5M_ENABLED = "true";
+  process.env.BANKROLL_5M_START_USD = "42.5";
 
   const config = getConfig();
   assert.equal(config.autoBuy5mEnabled, true);
+  assert.equal(config.bankroll5mStartUsd, 42.5);
   assert.equal(config.signal5mBotToken, "sig5");
   assert.equal(config.action5mChatId, "400");
 
