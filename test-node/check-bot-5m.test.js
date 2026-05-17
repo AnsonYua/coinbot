@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 
 import {
   build5mOutcomeSummaryText,
+  buildSignalText,
   build5mTradeAlertText,
   evaluate5mEntryPrice,
   extractMarketStartTsFromSlug,
@@ -58,6 +59,20 @@ test("5m trade alert text includes executed order details", () => {
   assert.match(text, /token_id: 12345/);
   assert.match(text, /order_id: ord-1/);
   assert.match(text, /order_status: matched/);
+});
+
+test("5m check signal text escapes html-sensitive characters", () => {
+  const text = buildSignalText({
+    marketSlug: "btc-updown-5m-123",
+    triggerUtc: "2026-05-17T19:09:00.000Z",
+    question: "Bitcoin Up or Down <test>?",
+    yes: { price: 0.81, passes: true },
+    no: { price: 0.1, passes: false },
+    dryRun: false,
+  });
+
+  assert.match(text, /question: Bitcoin Up or Down &lt;test&gt;\?/);
+  assert.match(text, /band: &gt;0\.8 and &lt;0\.95/);
 });
 
 test("outcome summary text reports today win loss totals", () => {
