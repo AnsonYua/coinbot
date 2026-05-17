@@ -66,29 +66,40 @@ test("outcome summary text reports today win loss totals", () => {
       wins: 2,
       losses: 1,
       unresolved: 3,
+      profitUsd: 1.25,
+      lossUsd: 4.1,
+      realizedPnlUsd: -2.85,
+      unresolvedStakeUsd: 12.6,
+      totalStakeUsd: 18.9,
       winRate: 2 / 3,
     },
     settled: [
       { marketSlug: "m1", side: "YES", outcomeStatus: "win" },
     ],
   });
-  assert.match(text, /wins: 2/);
-  assert.match(text, /losses: 1/);
+  assert.match(text, /realized_pnl_usd: -2.850/);
+  assert.match(text, /profit_usd: 1.250/);
+  assert.match(text, /loss_usd: 4.100/);
   assert.match(text, /settled: m1 YES -> win/);
 });
 
-test("summarize5mOutcomes counts win loss unresolved", () => {
+test("summarize5mOutcomes uses money-based pnl", () => {
   const summary = summarize5mOutcomes([
-    { outcome_status: "win" },
-    { outcome_status: "loss" },
-    { outcome_status: null },
-    { outcome_status: "unresolved" },
+    { outcome_status: "win", side_price: 0.84, buy_matched_shares: 5 },
+    { outcome_status: "loss", side_price: 0.81, buy_matched_shares: 5 },
+    { outcome_status: null, side_price: 0.9, buy_matched_shares: 5 },
+    { outcome_status: "unresolved", side_price: 0.88, buy_matched_shares: 5 },
   ]);
 
   assert.deepEqual(summary, {
     wins: 1,
     losses: 1,
     unresolved: 2,
+    profitUsd: 0.8,
+    lossUsd: 4.05,
+    realizedPnlUsd: -3.25,
+    unresolvedStakeUsd: 8.9,
+    totalStakeUsd: 17.15,
     winRate: 0.5,
   });
 });
@@ -114,17 +125,24 @@ test("5m settlement eligibility uses market timestamp rather than created_at", (
 
 test("runCheck5m skips outside trigger window", async () => {
   seedEnv();
+  const sentSignals = [];
   const result = await runCheck5m({
     deps: {
       nowSeconds: 1_234,
       resolveTriggerMarketStartTsImpl: () => null,
       ensureIndexesImpl: async () => {},
+      sendSignalMessageImpl: async (_cfg, text) => {
+        sentSignals.push(text);
+      },
     },
   });
 
   assert.equal(result.skipped, true);
   assert.equal(result.reason, "outside_trigger_window");
   assert.match(result.marketSlug, /^btc-updown-5m-/);
+  assert.equal(result.signalMessageSent, true);
+  assert.equal(sentSignals.length, 1);
+  assert.match(sentSignals[0], /BTC 5m check skipped/);
 });
 
 test("runCheck5m assumes a successful paper fill when auto buy is disabled", async () => {
@@ -177,6 +195,11 @@ test("runCheck5m assumes a successful paper fill when auto buy is disabled", asy
           wins: 1,
           losses: 0,
           unresolved: 0,
+          profitUsd: 0.8,
+          lossUsd: 0,
+          realizedPnlUsd: 0.8,
+          unresolvedStakeUsd: 0,
+          totalStakeUsd: 4.2,
           winRate: 1,
         },
       }),
@@ -199,6 +222,7 @@ test("runCheck5m assumes a successful paper fill when auto buy is disabled", asy
   assert.equal(result.actions[0].bought, true);
   assert.equal(result.actions[0].assumedFill, true);
   assert.equal(result.outcomeSummary.wins, 1);
+  assert.equal(result.outcomeSummary.realizedPnlUsd, 0.8);
 });
 
 test("runCheck5m settles previous trades after accepted buy", async () => {
@@ -252,6 +276,11 @@ test("runCheck5m settles previous trades after accepted buy", async () => {
           wins: 1,
           losses: 0,
           unresolved: 0,
+          profitUsd: 0.8,
+          lossUsd: 0,
+          realizedPnlUsd: 0.8,
+          unresolvedStakeUsd: 0,
+          totalStakeUsd: 4.2,
           winRate: 1,
         },
       }),
@@ -263,5 +292,6 @@ test("runCheck5m settles previous trades after accepted buy", async () => {
   assert.equal(tradeAlerts[0].accepted, true);
   assert.equal(result.actions[0].orderId, "ord-1");
   assert.equal(result.outcomeSummary.wins, 1);
+  assert.equal(result.outcomeSummary.realizedPnlUsd, 0.8);
   assert.equal(result.outcomeSummary.settled.length, 1);
 });
