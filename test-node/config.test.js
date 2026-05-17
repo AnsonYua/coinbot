@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { isAuthorized } from "../lib/config.js";
+import { get5mTelegramConfig, getConfig, isAuthorized } from "../lib/config.js";
 
 test("authorization accepts matching secret query", () => {
   process.env.CRON_SECRET = "topsecret";
@@ -22,4 +22,31 @@ test("authorization rejects wrong secret", () => {
   const req = { headers: {} };
   const query = new URLSearchParams({ secret: "wrong" });
   assert.equal(isAuthorized(req, query), false);
+});
+
+test("config exposes AUTO_BUY_5M_ENABLED and 5m telegram env", () => {
+  process.env.CRON_SECRET = "topsecret";
+  process.env.MONGODB_URI = "mongodb://localhost:27017/test";
+  process.env.TELEGRAM_SIGNAL_BOT_TOKEN = "sig";
+  process.env.TELEGRAM_SIGNAL_CHAT_ID = "100";
+  process.env.TELEGRAM_ACTION_BOT_TOKEN = "act";
+  process.env.TELEGRAM_ACTION_CHAT_ID = "200";
+  process.env.TELEGRAM_SIGNAL_5M_BOT_TOKEN = "sig5";
+  process.env.TELEGRAM_SIGNAL_5M_CHAT_ID = "300";
+  process.env.TELEGRAM_ACTION_5M_BOT_TOKEN = "act5";
+  process.env.TELEGRAM_ACTION_5M_CHAT_ID = "400";
+  process.env.AUTO_BUY_5M_ENABLED = "true";
+
+  const config = getConfig();
+  assert.equal(config.autoBuy5mEnabled, true);
+  assert.equal(config.signal5mBotToken, "sig5");
+  assert.equal(config.action5mChatId, "400");
+
+  const telegram5m = get5mTelegramConfig(config);
+  assert.deepEqual(telegram5m, {
+    signalBotToken: "sig5",
+    signalChatId: "300",
+    actionBotToken: "act5",
+    actionChatId: "400",
+  });
 });
