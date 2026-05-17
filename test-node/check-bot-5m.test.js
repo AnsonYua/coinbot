@@ -67,6 +67,10 @@ test("outcome summary text reports today win loss totals", () => {
       stakeUsd: 18.9,
       unresolvedStakeUsd: 12.6,
       totalRealizedPnlUsd: -2.85,
+      profitUsd: 1.25,
+      lossUsd: 4.1,
+      wins: 2,
+      losses: 1,
       roi: -2.85 / 18.9,
     },
   });
@@ -74,6 +78,10 @@ test("outcome summary text reports today win loss totals", () => {
   assert.match(text, /stake_usd: 18.900/);
   assert.match(text, /unresolved_stake_usd: 12.600/);
   assert.match(text, /total_realized_pnl_usd: -2.850/);
+  assert.match(text, /total_win_usd: 1.250/);
+  assert.match(text, /total_loss_usd: 4.100/);
+  assert.match(text, /win_count: 2/);
+  assert.match(text, /loss_count: 1/);
   assert.match(text, /roi: -15.08%/);
 });
 

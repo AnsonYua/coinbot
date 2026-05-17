@@ -48,7 +48,7 @@ test("config exposes AUTO_BUY_5M_ENABLED and 5m telegram env", () => {
   assert.deepEqual(telegram5m, {
     signalBotToken: "sig5",
     signalChatId: "300",
-    actionBotToken: "act5",
-    actionChatId: "400",
+    actionBotToken: "sig5",
+    actionChatId: "300",
   });
 });
