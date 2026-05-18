@@ -14,7 +14,7 @@ Minimal buy-only BTC 15-minute Polymarket bot for Vercel.
 - optionally places one buy order for the market/side
 - exposes a second endpoint: `GET /api/check-5m?secret=...`
 - the 5-minute endpoint checks `btc-updown-5m-*` markets
-- the 5-minute rule is price-only: buy a side when BUY price is `> 0.80` and `< 0.95`
+- the 5-minute rule buys a side when BUY price is `> 0.80` and `<= 0.92`, BTC has moved in that side's direction by `0.025%` to `0.07%`, and 60-second momentum is not worse than `-0.02%` against the side
 - the 5-minute bot buys `5` shares per passing side
 - the 5-minute bot uses dedicated Telegram bots/env vars
 - after a fresh 5-minute buy, it settles older 5-minute bought trades and sends a today summary of wins/losses
@@ -65,6 +65,14 @@ TELEGRAM_ACTION_5M_CHAT_ID=
 AUTO_BUY_5M_ENABLED=false
 BANKROLL_5M_START_USD=30
 ```
+
+Reset the active 5-minute paper records while keeping an archive:
+
+```bash
+MONGODB_URI="..." npm run reset:5m-records
+```
+
+This archives active `btc_5m_price_band` records under a timestamped strategy key so new summaries start from zero.
 
 ## Local checks
 

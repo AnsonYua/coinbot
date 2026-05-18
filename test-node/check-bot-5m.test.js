@@ -34,8 +34,28 @@ test("5m price band is strict at both edges", () => {
   assert.equal(is5mEntryPriceEligible(0.8), false);
   assert.equal(is5mEntryPriceEligible(0.95), false);
   assert.equal(is5mEntryPriceEligible(0.81), true);
-  assert.equal(is5mEntryPriceEligible(0.94), true);
+  assert.equal(is5mEntryPriceEligible(0.92), true);
+  assert.equal(is5mEntryPriceEligible(0.93), false);
   assert.equal(evaluate5mEntryPrice(0.79).reason, "price_outside_band");
+});
+
+test("5m balanced rule requires price, distance, and momentum", () => {
+  const passingFeatures = {
+    btcStart: 100,
+    btcTriggerPrice: 100.04,
+    btcDistance: 0.0004,
+    btcMomentum60: 0.0001,
+  };
+  assert.equal(evaluate5mEntryPrice(0.9, "YES", passingFeatures).passes, true);
+  assert.equal(evaluate5mEntryPrice(0.9, "NO", passingFeatures).reason, "btc_distance_outside_band");
+  assert.equal(evaluate5mEntryPrice(0.9, "YES", {
+    ...passingFeatures,
+    btcDistance: 0.0008,
+  }).reason, "btc_distance_outside_band");
+  assert.equal(evaluate5mEntryPrice(0.9, "YES", {
+    ...passingFeatures,
+    btcMomentum60: -0.0003,
+  }).reason, "btc_momentum_too_negative");
 });
 
 test("5m trade alert text includes executed order details", () => {
@@ -68,11 +88,18 @@ test("5m check signal text escapes html-sensitive characters", () => {
     question: "Bitcoin Up or Down <test>?",
     yes: { price: 0.81, passes: true },
     no: { price: 0.1, passes: false },
+    btc: {
+      btcStart: 100,
+      btcTriggerPrice: 100.04,
+      btcDistance: 0.0004,
+      btcMomentum60: 0.0001,
+    },
     dryRun: false,
   });
 
   assert.match(text, /question: Bitcoin Up or Down &lt;test&gt;\?/);
-  assert.match(text, /band: &gt;0\.8 and &lt;0\.95/);
+  assert.match(text, /price band: &gt;0\.8 and &lt;=0\.92/);
+  assert.match(text, /btc distance: 0\.04%/);
 });
 
 test("outcome summary text reports today win loss totals", () => {
@@ -190,6 +217,12 @@ test("runCheck5m assumes a successful paper fill when auto buy is disabled", asy
         negRisk: false,
       }),
       fetchMarketPriceImpl: async (tokenId) => (tokenId === "yes-token" ? 0.84 : 0.95),
+      fetch5mTriggerFeaturesImpl: async () => ({
+        btcStart: 100,
+        btcTriggerPrice: 100.04,
+        btcDistance: 0.0004,
+        btcMomentum60: 0.0001,
+      }),
       insertBotRunImpl: async () => {},
       sendSignalMessageImpl: async () => {},
       findDecisionImpl: async () => null,
@@ -272,6 +305,12 @@ test("runCheck5m settles previous trades after accepted buy", async () => {
         negRisk: false,
       }),
       fetchMarketPriceImpl: async (tokenId) => (tokenId === "yes-token" ? 0.84 : 0.70),
+      fetch5mTriggerFeaturesImpl: async () => ({
+        btcStart: 100,
+        btcTriggerPrice: 100.04,
+        btcDistance: 0.0004,
+        btcMomentum60: 0.0001,
+      }),
       fetchBookImpl: async () => ({
         asks: [{ price: 0.84, size: 100 }],
         bestAsk: 0.84,
