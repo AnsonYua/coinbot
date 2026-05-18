@@ -60,8 +60,8 @@ Additional env for the 5-minute bot:
 ```bash
 TELEGRAM_SIGNAL_5M_BOT_TOKEN=
 TELEGRAM_SIGNAL_5M_CHAT_ID=
-TELEGRAM_ACTION_5M_BOT_TOKEN=
-TELEGRAM_ACTION_5M_CHAT_ID=
+TELEGRAM_ACTION_5M_BOT_TOKEN= # optional, falls back to signal 5m bot
+TELEGRAM_ACTION_5M_CHAT_ID= # optional, falls back to signal 5m chat
 AUTO_BUY_5M_ENABLED=false
 BANKROLL_5M_START_USD=30
 ```
@@ -69,7 +69,7 @@ BANKROLL_5M_START_USD=30
 Reset the active 5-minute paper records while keeping an archive:
 
 ```bash
-RESET_5M_CONFIRM=1 MONGODB_URI="..." npm run reset:5m-records
+MONGODB_URI="..." npm run reset:5m-records
 ```
 
 This archives active `btc_5m_price_band` records under a timestamped strategy key so new summaries start from zero.

@@ -52,3 +52,24 @@ test("config exposes AUTO_BUY_5M_ENABLED and 5m telegram env", () => {
     actionChatId: "400",
   });
 });
+
+test("5m telegram action config falls back to signal config", () => {
+  process.env.CRON_SECRET = "topsecret";
+  process.env.MONGODB_URI = "mongodb://localhost:27017/test";
+  process.env.TELEGRAM_SIGNAL_BOT_TOKEN = "sig";
+  process.env.TELEGRAM_SIGNAL_CHAT_ID = "100";
+  process.env.TELEGRAM_ACTION_BOT_TOKEN = "act";
+  process.env.TELEGRAM_ACTION_CHAT_ID = "200";
+  process.env.TELEGRAM_SIGNAL_5M_BOT_TOKEN = "sig5";
+  process.env.TELEGRAM_SIGNAL_5M_CHAT_ID = "300";
+  delete process.env.TELEGRAM_ACTION_5M_BOT_TOKEN;
+  delete process.env.TELEGRAM_ACTION_5M_CHAT_ID;
+
+  const telegram5m = get5mTelegramConfig(getConfig());
+  assert.deepEqual(telegram5m, {
+    signalBotToken: "sig5",
+    signalChatId: "300",
+    actionBotToken: "sig5",
+    actionChatId: "300",
+  });
+});
