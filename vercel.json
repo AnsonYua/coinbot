@@ -8,6 +8,10 @@
     "api/check-5m.js": {
       "maxDuration": 30,
       "includeFiles": "data/*.json"
+    },
+    "api/check-5m-v2.js": {
+      "maxDuration": 30,
+      "includeFiles": "data/*.json"
     }
   }
 }
