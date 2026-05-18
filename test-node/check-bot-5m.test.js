@@ -363,3 +363,165 @@ test("runCheck5m settles previous trades after accepted buy", async () => {
   assert.equal(result.outcomeSummary.remainingBankrollUsd, 30.8);
   assert.equal(result.outcomeSummary.settled.length, 1);
 });
+
+test("runCheck5m records skips and still settles when BTC features fail", async () => {
+  seedEnv();
+  process.env.AUTO_BUY_5M_ENABLED = "true";
+  process.env.DRY_RUN_DEFAULT = "false";
+
+  const insertedDecisions = [];
+  const errorLogs = [];
+  const sentSignals = [];
+  let settleCalls = 0;
+  const result = await runCheck5m({
+    deps: {
+      nowSeconds: 1_440,
+      now: new Date("2026-05-18T00:00:00Z"),
+      ensureIndexesImpl: async () => {},
+      resolveTriggerMarketStartTsImpl: () => 1_200,
+      fetchMarketByStartTsImpl: async () => ({
+        slug: "btc-updown-5m-1200",
+        startTs: 1_200,
+        question: "Bitcoin Up or Down - test",
+        yesTokenId: "yes-token",
+        noTokenId: "no-token",
+        tickSize: "0.01",
+        orderMinSize: 5,
+        negRisk: false,
+      }),
+      fetchMarketPriceImpl: async (tokenId) => (tokenId === "yes-token" ? 0.84 : 0.84),
+      fetch5mTriggerFeaturesImpl: async () => {
+        throw new Error("Binance temporarily unavailable");
+      },
+      insertBotRunImpl: async () => {},
+      sendSignalMessageImpl: async (_cfg, text) => {
+        sentSignals.push(text);
+      },
+      findDecisionImpl: async () => null,
+      insertDecisionImpl: async (doc) => {
+        insertedDecisions.push(doc);
+      },
+      updateDecisionImpl: async () => {},
+      insertErrorLogImpl: async (doc) => {
+        errorLogs.push(doc);
+      },
+      insertActionImpl: async () => {},
+      sendTradeAlertImpl: async () => {
+        throw new Error("should not buy without BTC features");
+      },
+      settleTradesImpl: async () => {
+        settleCalls += 1;
+        return {
+          settled: [
+            { marketSlug: "older", side: "YES", outcomeStatus: "win" },
+          ],
+          summary: {
+            wins: 1,
+            losses: 0,
+            unresolved: 0,
+            profitUsd: 0.8,
+            lossUsd: 0,
+            realizedPnlUsd: 0.8,
+            totalRealizedPnlUsd: 0.8,
+            unresolvedStakeUsd: 0,
+            stakeUsd: 4.2,
+            totalStakeUsd: 4.2,
+            remainingBankrollUsd: 30.8,
+            roi: 0.8 / 4.2,
+            winRate: 1,
+          },
+        };
+      },
+      sendOutcomeSummaryImpl: async () => ({ sent: true, error: null }),
+    },
+  });
+
+  assert.equal(result.btc, null);
+  assert.match(result.btcFeatureError, /Binance temporarily unavailable/);
+  assert.equal(result.yes.reason, "missing_btc_features");
+  assert.equal(result.no.reason, "missing_btc_features");
+  assert.equal(insertedDecisions.length, 2);
+  assert.equal(insertedDecisions[0].model_reason, "missing_btc_features");
+  assert.equal(errorLogs[0].source, "binance_features_5m");
+  assert.match(sentSignals[0], /btc feature error: Binance temporarily unavailable/);
+  assert.equal(settleCalls, 1);
+  assert.equal(result.outcomeSummary.remainingBankrollUsd, 30.8);
+  assert.equal(result.outcomeSummary.settled.length, 1);
+});
+
+test("runCheck5m requires enough liquidity for the full target shares", async () => {
+  seedEnv();
+  process.env.AUTO_BUY_5M_ENABLED = "true";
+  process.env.DRY_RUN_DEFAULT = "false";
+
+  let submitted = false;
+  const errorLogs = [];
+  const result = await runCheck5m({
+    deps: {
+      nowSeconds: 1_440,
+      now: new Date("2026-05-18T00:00:00Z"),
+      ensureIndexesImpl: async () => {},
+      resolveTriggerMarketStartTsImpl: () => 1_200,
+      fetchMarketByStartTsImpl: async () => ({
+        slug: "btc-updown-5m-1200",
+        startTs: 1_200,
+        question: "Bitcoin Up or Down - test",
+        yesTokenId: "yes-token",
+        noTokenId: "no-token",
+        tickSize: "0.01",
+        orderMinSize: 5,
+        negRisk: false,
+      }),
+      fetchMarketPriceImpl: async (tokenId) => (tokenId === "yes-token" ? 0.84 : 0.70),
+      fetch5mTriggerFeaturesImpl: async () => ({
+        btcStart: 100,
+        btcTriggerPrice: 100.04,
+        btcDistance: 0.0004,
+        btcMomentum60: 0.0001,
+      }),
+      fetchBookImpl: async () => ({
+        asks: [{ price: 0.84, size: 1 }],
+        bestAsk: 0.84,
+      }),
+      submitOrderImpl: async () => {
+        submitted = true;
+        return { success: true };
+      },
+      insertBotRunImpl: async () => {},
+      sendSignalMessageImpl: async () => {},
+      findDecisionImpl: async () => null,
+      insertDecisionImpl: async () => {},
+      claimDecisionForBuyImpl: async () => ({ ok: true }),
+      updateDecisionImpl: async () => {},
+      insertErrorLogImpl: async (doc) => {
+        errorLogs.push(doc);
+      },
+      insertActionImpl: async () => {},
+      sendTradeAlertImpl: async () => ({ sent: true, error: null }),
+      settleTradesImpl: async () => ({
+        settled: [],
+        summary: {
+          wins: 0,
+          losses: 0,
+          unresolved: 0,
+          profitUsd: 0,
+          lossUsd: 0,
+          realizedPnlUsd: 0,
+          totalRealizedPnlUsd: 0,
+          unresolvedStakeUsd: 0,
+          stakeUsd: 0,
+          totalStakeUsd: 0,
+          remainingBankrollUsd: 30,
+          roi: null,
+          winRate: null,
+        },
+      }),
+      sendOutcomeSummaryImpl: async () => ({ sent: true, error: null }),
+    },
+  });
+
+  assert.equal(submitted, false);
+  assert.equal(result.actions[0].side, "YES");
+  assert.match(result.actions[0].error, /not enough ask liquidity/);
+  assert.equal(errorLogs[0].source, "buy_order_5m");
+});

@@ -9,6 +9,10 @@ const strategyKey = process.env.RESET_5M_STRATEGY_KEY || "btc_5m_price_band";
 const archiveKey = `${strategyKey}_archived_${new Date().toISOString().replace(/[-:.TZ]/g, "").slice(0, 14)}`;
 const since = process.env.RESET_5M_SINCE ? new Date(process.env.RESET_5M_SINCE) : null;
 
+if (process.env.RESET_5M_CONFIRM !== "1") {
+  throw new Error("Set RESET_5M_CONFIRM=1 to archive active 5m records");
+}
+
 if (since && Number.isNaN(since.getTime())) {
   throw new Error("RESET_5M_SINCE must be a valid date when provided");
 }

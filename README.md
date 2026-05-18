@@ -69,7 +69,7 @@ BANKROLL_5M_START_USD=30
 Reset the active 5-minute paper records while keeping an archive:
 
 ```bash
-MONGODB_URI="..." npm run reset:5m-records
+RESET_5M_CONFIRM=1 MONGODB_URI="..." npm run reset:5m-records
 ```
 
 This archives active `btc_5m_price_band` records under a timestamped strategy key so new summaries start from zero.
