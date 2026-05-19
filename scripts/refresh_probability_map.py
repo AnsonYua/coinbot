@@ -10,7 +10,7 @@ import sys
 from datetime import datetime, timezone
 
 
-PROJECT_ROOT = pathlib.Path("/Users/hello/Desktop/bitcoinbot/coinbot-publish")
+PROJECT_ROOT = pathlib.Path(__file__).resolve().parent.parent
 CACHE_TOOL = PROJECT_ROOT / "scripts" / "cache_binance_btc_1m.py"
 COARSE_TOOL = PROJECT_ROOT / "scripts" / "build_btc_probability_map_coarse.py"
 PROJECT_DATA_FILE = PROJECT_ROOT / "data" / "btc_probability_map_365d_coarse.json"
@@ -48,8 +48,7 @@ def try_incremental_cache(days: int) -> str | None:
     existing_map = json.loads(PROJECT_DATA_FILE.read_text())
     source = existing_map.get("source", {})
     old_cache_file = source.get("btc_cache_file")
-    window_start_utc = source.get("window_start_utc")
-    if not old_cache_file or not window_start_utc:
+    if not old_cache_file:
         return None
 
     old_cache_path = pathlib.Path(old_cache_file)
@@ -61,7 +60,7 @@ def try_incremental_cache(days: int) -> str | None:
     if not old_rows:
         return None
 
-    start_ms = iso_to_ms(window_start_utc)
+    start_ms = int(old_rows[0][0])
     latest_end_ms = cache_mod.latest_completed_minute_ms()
     current_end_ms = int(old_rows[-1][0]) + cache_mod.MINUTE_MS
     if latest_end_ms <= current_end_ms:

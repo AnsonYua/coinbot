@@ -131,6 +131,8 @@ test("YES side passes when coarse model edge and support clear thresholds", asyn
     minEdge: 0.10,
     minProbability: 0.70,
     minSupport: 5,
+    minBuyPrice: 0.30,
+    maxBuyPrice: 0.70,
     probabilityField: "win_rate",
   });
 
@@ -178,6 +180,8 @@ test("NO side fails when support is below minimum even with positive edge", asyn
     minEdge: 0.10,
     minProbability: 0.70,
     minSupport: 10,
+    minBuyPrice: 0.30,
+    maxBuyPrice: 0.70,
     probabilityField: "win_rate",
   });
 
@@ -202,6 +206,8 @@ test("direction mismatch fails before map lookup", async () => {
     minEdge: 0.10,
     minProbability: 0.70,
     minSupport: 10,
+    minBuyPrice: 0.30,
+    maxBuyPrice: 0.70,
     probabilityField: "win_rate",
   });
 
@@ -225,6 +231,8 @@ test("can use conservative wilson probability field", async () => {
     minEdge: 0.10,
     minProbability: 0.70,
     minSupport: 10,
+    minBuyPrice: 0.30,
+    maxBuyPrice: 0.70,
     probabilityField: "wilson_lower_95",
   });
 
@@ -289,6 +297,8 @@ test("fails when probability is below the stricter minimum even if edge and supp
     minEdge: 0.10,
     minProbability: 0.70,
     minSupport: 5,
+    minBuyPrice: 0.30,
+    maxBuyPrice: 0.70,
     probabilityField: "win_rate",
   });
 
@@ -314,6 +324,8 @@ test("falls back to volume all_ret10 when the exact ret bucket is missing", asyn
     minEdge: 0.10,
     minProbability: 0.60,
     minSupport: 100,
+    minBuyPrice: 0.30,
+    maxBuyPrice: 0.70,
     probabilityField: "win_rate",
   });
 
@@ -337,6 +349,8 @@ test("falls back to delta all_ret10 when the volume bucket is missing", async ()
     minEdge: 0.10,
     minProbability: 0.60,
     minSupport: 100,
+    minBuyPrice: 0.30,
+    maxBuyPrice: 0.70,
     probabilityField: "win_rate",
   });
 
@@ -366,11 +380,63 @@ test("falls back to mins_at_least when no delta bucket entry exists", async () =
     minEdge: 0.05,
     minProbability: 0.70,
     minSupport: 100,
+    minBuyPrice: 0.30,
+    maxBuyPrice: 0.70,
     probabilityField: "win_rate",
   });
 
   assert.equal(result.source, "mins_at_least");
   assert.equal(result.probability, 0.788);
+});
+
+test("fails when buy price is below the configured band", async () => {
+  const result = await evaluateProbabilitySide({
+    side: "YES",
+    entryPrice: 0.29,
+    features: {
+      btcStart: 77915.32,
+      btcTriggerPrice: 77916.24,
+      aboveStartMinutes: 6,
+      belowStartMinutes: 7,
+      ret10mToTrigger: -0.000011,
+      triggerVolumeRatio1m: 0.8,
+    },
+    mapPayload: coarseMapPayload,
+    minEdge: 0.10,
+    minProbability: 0.70,
+    minSupport: 5,
+    minBuyPrice: 0.30,
+    maxBuyPrice: 0.70,
+    probabilityField: "win_rate",
+  });
+
+  assert.equal(result.passes, false);
+  assert.equal(result.reason, "price_outside_band");
+});
+
+test("fails when buy price is above the configured band", async () => {
+  const result = await evaluateProbabilitySide({
+    side: "YES",
+    entryPrice: 0.71,
+    features: {
+      btcStart: 100,
+      btcTriggerPrice: 134,
+      aboveStartMinutes: 10,
+      belowStartMinutes: 3,
+      ret10mToTrigger: 0.00012,
+      triggerVolumeRatio1m: 1.4,
+    },
+    mapPayload: coarseMapPayload,
+    minEdge: 0.10,
+    minProbability: 0.70,
+    minSupport: 10,
+    minBuyPrice: 0.30,
+    maxBuyPrice: 0.70,
+    probabilityField: "win_rate",
+  });
+
+  assert.equal(result.passes, false);
+  assert.equal(result.reason, "price_outside_band");
 });
 
 test("coarse loader rejects legacy map format", async () => {

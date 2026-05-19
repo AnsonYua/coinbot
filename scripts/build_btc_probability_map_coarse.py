@@ -131,6 +131,7 @@ def build_resolved_dataset(cache_file: pathlib.Path):
 
     return {
         "rows": rows,
+        "cache_start_ts": first_start_ts,
         "first_start_ts": first_eligible_start_ts,
         "last_start_ts": last_start_ts,
         "missing_candles": missing_candles,
@@ -257,7 +258,8 @@ def main():
         "source": {
             "btc_cache_file": str(cache_file),
             "market_results_source": "BTC cache only; outcome inferred from 15m end price vs start price",
-            "window_start_utc": iso_utc(dataset["first_start_ts"]),
+            "window_start_utc": iso_utc(dataset["cache_start_ts"]),
+            "first_eligible_market_start_utc": iso_utc(dataset["first_start_ts"]),
             "window_end_utc": iso_utc(dataset["last_start_ts"] + MARKET_SECONDS),
             "resolved_rows": len(dataset["rows"]),
             "missing_candles": dataset["missing_candles"],
