@@ -92,7 +92,7 @@ test("5m v2 TA rule skips low support", () => {
 
 test("5m v2 TA rule skips prices outside band", () => {
   assert.equal(evaluate5mV2EntryPrice(0.29, "YES", btcFeatures, mapPayload).reason, "price_outside_band");
-  assert.equal(evaluate5mV2EntryPrice(0.56, "YES", btcFeatures, mapPayload).reason, "price_outside_band");
+  assert.equal(evaluate5mV2EntryPrice(0.61, "YES", btcFeatures, mapPayload).reason, "price_outside_band");
 });
 
 test("5m v2 Kelly sizing uses 1/10 Kelly with 5-share floor", () => {
@@ -283,8 +283,8 @@ test("runCheck5mV2 dry run sends preview and stores v2 decision fields", async (
   assert.equal(insertedDecisions[0].model_conservative_probability, 0.65);
   assert.equal(insertedDecisions[0].model_support_n, 80);
   assert.equal(insertedDecisions[0].min_entry_price, 0.3);
-  assert.equal(insertedDecisions[0].max_entry_price, 0.55);
-  assert.equal(insertedDecisions[0].min_conservative_edge, 0.08);
+  assert.equal(insertedDecisions[0].max_entry_price, 0.6);
+  assert.equal(insertedDecisions[0].min_conservative_edge, 0.06);
   assert.equal(insertedDecisions[0].min_support, 25);
   assert.equal(insertedDecisions[0].sizing_method, "kelly_1_10");
   assert.equal(insertedDecisions[0].kelly_bankroll_usd, 30);
