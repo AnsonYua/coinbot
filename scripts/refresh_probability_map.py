@@ -11,9 +11,8 @@ from datetime import datetime, timezone
 
 
 PROJECT_ROOT = pathlib.Path("/Users/hello/Desktop/bitcoinbot/coinbot-publish")
-REPO_ROOT = pathlib.Path("/Users/hello/Desktop/bitcoinbot/repo")
-CACHE_TOOL = REPO_ROOT / "tools" / "cache_binance_btc_1m.py"
-COARSE_TOOL = REPO_ROOT / "tools" / "build_btc_probability_map_coarse.py"
+CACHE_TOOL = PROJECT_ROOT / "scripts" / "cache_binance_btc_1m.py"
+COARSE_TOOL = PROJECT_ROOT / "scripts" / "build_btc_probability_map_coarse.py"
 PROJECT_DATA_FILE = PROJECT_ROOT / "data" / "btc_probability_map_365d_coarse.json"
 
 
@@ -71,6 +70,7 @@ def try_incremental_cache(days: int) -> str | None:
     delta_rows = cache_mod.fetch_binance_1m(current_end_ms, latest_end_ms)
     merged_rows = old_rows + delta_rows
     target_path = cache_mod.cache_path(start_ms, latest_end_ms)
+    target_path.parent.mkdir(parents=True, exist_ok=True)
     target_path.write_text(json.dumps(merged_rows))
     return str(target_path)
 

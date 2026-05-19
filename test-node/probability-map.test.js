@@ -7,6 +7,7 @@ const coarseMapPayload = {
   binning: {
     delta_points: ["0_19", "20_49", "50_99", "100_plus"],
     ret10_abs: ["0_9bp", "10_39bp", "40bp_plus"],
+    trigger_volume_ratio_1m: ["lt_0_5x", "0_5x_1_2x", "1_2x_plus"],
     minutes_field: {
       YES: "above_mins",
       NO: "below_mins",
@@ -18,24 +19,56 @@ const coarseMapPayload = {
       YES: {
         "6": {
           "0_19": {
-            "0_9bp": {
-              n: 444,
-              win_rate: 0.725225,
-              wilson_lower_95: 0.681904,
-            },
             all_ret10: {
               n: 1625,
               win_rate: 0.646769,
               wilson_lower_95: 0.623208,
             },
+            ret10: {
+              "0_9bp": {
+                n: 520,
+                win_rate: 0.705,
+                wilson_lower_95: 0.664,
+              },
+            },
+            volume: {
+              "0_5x_1_2x": {
+                "0_9bp": {
+                  n: 444,
+                  win_rate: 0.725225,
+                  wilson_lower_95: 0.681904,
+                },
+                all_ret10: {
+                  n: 900,
+                  win_rate: 0.701111,
+                  wilson_lower_95: 0.670123,
+                },
+              },
+            },
           },
         },
         "10": {
           "20_49": {
-            "10_39bp": {
-              n: 94,
-              win_rate: 0.829787,
-              wilson_lower_95: 0.741321,
+            all_ret10: {
+              n: 120,
+              win_rate: 0.79,
+              wilson_lower_95: 0.710001,
+            },
+            ret10: {
+              "10_39bp": {
+                n: 105,
+                win_rate: 0.79,
+                wilson_lower_95: 0.708,
+              },
+            },
+            volume: {
+              "1_2x_plus": {
+                "10_39bp": {
+                  n: 94,
+                  win_rate: 0.829787,
+                  wilson_lower_95: 0.741321,
+                },
+              },
             },
           },
         },
@@ -43,10 +76,21 @@ const coarseMapPayload = {
       NO: {
         "8": {
           "0_19": {
-            "10_39bp": {
-              n: 137,
-              win_rate: 0.773723,
-              wilson_lower_95: 0.697291,
+            ret10: {
+              "10_39bp": {
+                n: 170,
+                win_rate: 0.75,
+                wilson_lower_95: 0.682,
+              },
+            },
+            volume: {
+              "lt_0_5x": {
+                "10_39bp": {
+                  n: 137,
+                  win_rate: 0.773723,
+                  wilson_lower_95: 0.697291,
+                },
+              },
             },
           },
         },
@@ -81,6 +125,7 @@ test("YES side passes when coarse model edge and support clear thresholds", asyn
       aboveStartMinutes: 6,
       belowStartMinutes: 7,
       ret10mToTrigger: -0.000011,
+      triggerVolumeRatio1m: 0.8,
     },
     mapPayload: coarseMapPayload,
     minEdge: 0.10,
@@ -92,8 +137,9 @@ test("YES side passes when coarse model edge and support clear thresholds", asyn
   assert.equal(result.passes, true);
   assert.equal(result.probability, 0.725225);
   assert.equal(result.supportN, 444);
-  assert.equal(result.source, "threshold");
+  assert.equal(result.source, "threshold_volume_boost");
   assert.equal(result.deltaBucket, "0_19");
+  assert.equal(result.volumeBucket, "0_5x_1_2x");
   assert.equal(result.ret10Bucket, "0_9bp");
 });
 
@@ -107,6 +153,7 @@ test("NO side fails when support is below minimum even with positive edge", asyn
       aboveStartMinutes: 2,
       belowStartMinutes: 8,
       ret10mToTrigger: -0.00011,
+      triggerVolumeRatio1m: 0.2,
     },
     mapPayload: {
       ...coarseMapPayload,
@@ -117,10 +164,10 @@ test("NO side fails when support is below minimum even with positive edge", asyn
           NO: {
             "8": {
               "0_19": {
-                "10_39bp": {
-                  n: 5,
-                  win_rate: 0.8,
-                  wilson_lower_95: 0.376,
+                volume: {
+                  "lt_0_5x": {
+                    "10_39bp": { n: 5, win_rate: 0.8, wilson_lower_95: 0.376 },
+                  },
                 },
               },
             },
@@ -149,6 +196,7 @@ test("direction mismatch fails before map lookup", async () => {
       aboveStartMinutes: 4,
       belowStartMinutes: 9,
       ret10mToTrigger: -0.0002,
+      triggerVolumeRatio1m: 0.8,
     },
     mapPayload: coarseMapPayload,
     minEdge: 0.10,
@@ -171,6 +219,7 @@ test("can use conservative wilson probability field", async () => {
       aboveStartMinutes: 10,
       belowStartMinutes: 3,
       ret10mToTrigger: 0.00012,
+      triggerVolumeRatio1m: 1.4,
     },
     mapPayload: coarseMapPayload,
     minEdge: 0.10,
@@ -194,6 +243,7 @@ test("fails when probability is below the stricter minimum even if edge and supp
       aboveStartMinutes: 6,
       belowStartMinutes: 7,
       ret10mToTrigger: -0.000011,
+      triggerVolumeRatio1m: 0.8,
     },
     mapPayload: {
       ...coarseMapPayload,
@@ -204,10 +254,31 @@ test("fails when probability is below the stricter minimum even if edge and supp
           YES: {
             "6": {
               "0_19": {
-                "0_9bp": {
-                  n: 444,
-                  win_rate: 0.625,
-                  wilson_lower_95: 0.601,
+                all_ret10: {
+                  n: 1625,
+                  win_rate: 0.646769,
+                  wilson_lower_95: 0.623208,
+                },
+                volume: {
+                  "0_5x_1_2x": {
+                    "0_9bp": {
+                      n: 444,
+                      win_rate: 0.625,
+                      wilson_lower_95: 0.601,
+                    },
+                    all_ret10: {
+                      n: 900,
+                      win_rate: 0.68,
+                      wilson_lower_95: 0.65,
+                    },
+                  },
+                },
+                ret10: {
+                  "0_9bp": {
+                    n: 520,
+                    win_rate: 0.625,
+                    wilson_lower_95: 0.601,
+                  },
                 },
               },
             },
@@ -227,7 +298,7 @@ test("fails when probability is below the stricter minimum even if edge and supp
   assert.ok(Math.abs(result.edge - 0.215) < 1e-12);
 });
 
-test("falls back to all_ret10 when the exact ret bucket is missing", async () => {
+test("falls back to volume all_ret10 when the exact ret bucket is missing", async () => {
   const result = await evaluateProbabilitySide({
     side: "YES",
     entryPrice: 0.50,
@@ -237,6 +308,30 @@ test("falls back to all_ret10 when the exact ret bucket is missing", async () =>
       aboveStartMinutes: 6,
       belowStartMinutes: 7,
       ret10mToTrigger: 0.0002,
+      triggerVolumeRatio1m: 0.8,
+    },
+    mapPayload: coarseMapPayload,
+    minEdge: 0.10,
+    minProbability: 0.60,
+    minSupport: 100,
+    probabilityField: "win_rate",
+  });
+
+  assert.equal(result.source, "threshold_volume_all_ret10_boost");
+  assert.equal(result.probability, 0.701111);
+});
+
+test("falls back to delta all_ret10 when the volume bucket is missing", async () => {
+  const result = await evaluateProbabilitySide({
+    side: "YES",
+    entryPrice: 0.50,
+    features: {
+      btcStart: 200,
+      btcTriggerPrice: 209,
+      aboveStartMinutes: 6,
+      belowStartMinutes: 7,
+      ret10mToTrigger: 0.0002,
+      triggerVolumeRatio1m: 2.0,
     },
     mapPayload: coarseMapPayload,
     minEdge: 0.10,
@@ -259,6 +354,7 @@ test("falls back to mins_at_least when no delta bucket entry exists", async () =
       aboveStartMinutes: 2,
       belowStartMinutes: 8,
       ret10mToTrigger: -0.0008,
+      triggerVolumeRatio1m: 1.4,
     },
     mapPayload: {
       ...coarseMapPayload,

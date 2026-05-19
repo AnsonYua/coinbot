@@ -1,5 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { mkdtemp, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import path from "node:path";
 
 import { STRATEGY_KEY_5M_V2 } from "../lib/config.js";
 import {
@@ -8,6 +11,7 @@ import {
   runCheck5mV2,
   select5mV2TradeSide,
 } from "../lib/check-bot-5m-v2.js";
+import { load5mTaProbabilityMap } from "../lib/ta-5m-probability.js";
 
 function seedEnv() {
   process.env.CRON_SECRET = "topsecret";
@@ -93,6 +97,22 @@ test("5m v2 TA rule skips low support", () => {
 test("5m v2 TA rule skips prices outside band", () => {
   assert.equal(evaluate5mV2EntryPrice(0.29, "YES", btcFeatures, mapPayload).reason, "price_outside_band");
   assert.equal(evaluate5mV2EntryPrice(0.61, "YES", btcFeatures, mapPayload).reason, "price_outside_band");
+});
+
+test("5m v2 map loader rejects maps without volume buckets", async () => {
+  const dir = await mkdtemp(path.join(tmpdir(), "btc-5m-map-"));
+  const mapPath = path.join(dir, "map.json");
+  await writeFile(mapPath, JSON.stringify({
+    strategy: { volume_feature: "btc_volume_4m_ratio" },
+    lookup_order: [{ source: "balanced_vol_v4", min_support: 15 }],
+    buckets: { balanced: {}, coarse: {}, simple: {} },
+    global: mapPayload.global,
+  }));
+
+  await assert.rejects(
+    load5mTaProbabilityMap(mapPath),
+    /missing balanced_vol_v4, coarse_vol_v4 bucket data/,
+  );
 });
 
 test("5m v2 Kelly sizing uses 1/10 Kelly with 5-share floor", () => {
