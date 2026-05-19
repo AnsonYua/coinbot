@@ -40,6 +40,35 @@ const btcFeatures = {
   btcBollingerZ20: 0.4,
 };
 
+function candleRow(open, high, low, close, quoteVolume = 1000) {
+  return [
+    0,
+    String(open),
+    String(high),
+    String(low),
+    String(close),
+    "1",
+    0,
+    String(quoteVolume),
+  ];
+}
+
+function btcFeaturesWithBullishCandles() {
+  const rows = Array.from({ length: 64 }, () => candleRow(100, 100.04, 99.96, 100));
+  rows[60] = candleRow(100, 100.16, 99.98, 100.12);
+  rows[61] = candleRow(100.12, 100.28, 100.10, 100.24);
+  rows[62] = candleRow(100.24, 100.28, 100.16, 100.20);
+  rows[63] = candleRow(100.20, 100.42, 100.18, 100.38);
+  return {
+    ...btcFeatures,
+    btcStart: 100,
+    btcTriggerPrice: 100.38,
+    btcDistance: 0.0038,
+    btcMomentum60: 0.0018,
+    rawCandles: rows,
+  };
+}
+
 const mapPayload = {
   lookup_order: [{ source: "global", min_support: 0 }],
   buckets: {
@@ -97,6 +126,24 @@ test("5m v2 TA rule skips low support", () => {
 test("5m v2 TA rule skips prices outside band", () => {
   assert.equal(evaluate5mV2EntryPrice(0.29, "YES", btcFeatures, mapPayload).reason, "price_outside_band");
   assert.equal(evaluate5mV2EntryPrice(0.61, "YES", btcFeatures, mapPayload).reason, "price_outside_band");
+});
+
+test("5m v2 optimized candle rule can pass wider price band", () => {
+  const result = evaluate5mV2EntryPrice(0.61, "YES", btcFeaturesWithBullishCandles(), mapPayload);
+  assert.equal(result.passes, true);
+  assert.equal(result.reason, "candle_edge_passed");
+  assert.equal(result.entryRule, "optimized_candle_edge");
+  assert.equal(result.candleConfirmed, true);
+  assert.equal(result.baseReason, "price_outside_band");
+  assert.equal(Number(result.conservativeEdge.toFixed(2)), 0.04);
+});
+
+test("5m v2 optimized candle rule still requires candle confirmation", () => {
+  const result = evaluate5mV2EntryPrice(0.61, "YES", btcFeatures, mapPayload);
+  assert.equal(result.passes, false);
+  assert.equal(result.reason, "price_outside_band");
+  assert.equal(result.candleConfirmed, false);
+  assert.equal(result.candleReason, "missing_raw_candles");
 });
 
 test("5m v2 map loader rejects maps without volume buckets", async () => {
@@ -228,6 +275,83 @@ test("runCheck5mV2 only previews the best side when both sides pass", async () =
   assert.equal(updates.some((update) => update.side === "YES" && update.set.buy_error === "not_best_side"), true);
 });
 
+test("runCheck5mV2 previews optimized candle edge trades", async () => {
+  seedEnv();
+  process.env.DRY_RUN_DEFAULT = "true";
+
+  const insertedDecisions = [];
+  const tradeAlerts = [];
+  const result = await runCheck5mV2({
+    deps: {
+      nowSeconds: 1_440,
+      now: new Date("2026-05-18T00:00:00Z"),
+      ensureIndexesImpl: async () => {},
+      resolveTriggerMarketStartTsImpl: () => 1_200,
+      load5mTaProbabilityMapImpl: async () => mapPayload,
+      fetchMarketByStartTsImpl: async () => ({
+        slug: "btc-updown-5m-1200",
+        startTs: 1_200,
+        question: "Bitcoin Up or Down - test",
+        yesTokenId: "yes-token",
+        noTokenId: "no-token",
+        tickSize: "0.01",
+        orderMinSize: 5,
+        negRisk: false,
+      }),
+      fetchMarketPriceImpl: async (tokenId) => (tokenId === "yes-token" ? 0.61 : 0.5),
+      fetch5mTaTriggerFeaturesImpl: async () => btcFeaturesWithBullishCandles(),
+      insertBotRunImpl: async () => {},
+      sendSignalMessageImpl: async () => {},
+      findDecisionImpl: async () => null,
+      insertDecisionImpl: async (doc) => {
+        insertedDecisions.push(doc);
+      },
+      listDecisionsForDayImpl: async () => [],
+      updateDecisionImpl: async () => {},
+      insertActionImpl: async () => {},
+      sendTradeAlertImpl: async (_cfg, payload) => {
+        tradeAlerts.push(payload);
+        return { sent: true, error: null };
+      },
+      settleTradesImpl: async () => ({
+        settled: [],
+        summary: {
+          wins: 0,
+          losses: 0,
+          unresolved: 0,
+          profitUsd: 0,
+          lossUsd: 0,
+          realizedPnlUsd: 0,
+          totalRealizedPnlUsd: 0,
+          unresolvedStakeUsd: 0,
+          stakeUsd: 0,
+          totalStakeUsd: 0,
+          remainingBankrollUsd: 30,
+          roi: null,
+          winRate: null,
+        },
+      }),
+      sendOutcomeSummaryImpl: async () => ({ sent: true, error: null }),
+    },
+  });
+
+  assert.equal(result.yes.passes, true);
+  assert.equal(result.yes.reason, "candle_edge_passed");
+  assert.equal(result.yes.entryRule, "optimized_candle_edge");
+  assert.equal(result.selectedTradeSide, "YES");
+  assert.equal(result.no.passes, false);
+  assert.equal(tradeAlerts.length, 1);
+  assert.equal(tradeAlerts[0].side, "YES");
+  assert.equal(insertedDecisions.length, 2);
+  const yesDecision = insertedDecisions.find((doc) => doc.side === "YES");
+  assert.equal(yesDecision.model_entry_rule, "optimized_candle_edge");
+  assert.equal(yesDecision.model_reason, "candle_edge_passed");
+  assert.equal(yesDecision.model_candle_confirmed, true);
+  assert.deepEqual(yesDecision.model_candle_patterns, ["impulse_up", "bullish_engulfing"]);
+  assert.equal(yesDecision.selected_for_trade, true);
+  assert.equal(yesDecision.passed, true);
+});
+
 test("runCheck5mV2 dry run sends preview and stores v2 decision fields", async () => {
   seedEnv();
   process.env.DRY_RUN_DEFAULT = "true";
@@ -299,6 +423,9 @@ test("runCheck5mV2 dry run sends preview and stores v2 decision fields", async (
   assert.equal(insertedDecisions.length, 2);
   assert.equal(insertedDecisions[0].strategy_key, STRATEGY_KEY_5M_V2);
   assert.equal(insertedDecisions[0].model_source, "btc_5m_ta_probability_map_90d");
+  assert.equal(insertedDecisions[0].model_entry_rule, "base_ta_edge");
+  assert.equal(insertedDecisions[0].model_candle_confirmed, false);
+  assert.equal(insertedDecisions[0].model_candle_source, "optimized_90d_1m_candles_v1");
   assert.equal(insertedDecisions[0].model_probability, 0.7);
   assert.equal(insertedDecisions[0].model_conservative_probability, 0.65);
   assert.equal(insertedDecisions[0].model_support_n, 80);
